@@ -1,6 +1,6 @@
-
-
-
+package com.hteph.MedievalLife;
+import com.hteph.modules.Actor;
+import com.hteph.utilities.Dice;
 
 public class ComingOfAge {
 

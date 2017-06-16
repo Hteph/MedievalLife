@@ -1,8 +1,11 @@
+package com.hteph.utilities;
 
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import com.hteph.MedievalLife.ImpConstant;
 
 /**
  * This class is released under GNU general public license

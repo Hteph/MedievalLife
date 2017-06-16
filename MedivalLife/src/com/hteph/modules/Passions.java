@@ -1,3 +1,4 @@
+package com.hteph.modules;
 
 public class Passions {
 	
