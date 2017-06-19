@@ -3,17 +3,17 @@ package com.hteph.modules;
 import java.util.ArrayList;
 
 public class Home {
-	ArrayList<Actor> occupants = new ArrayList<Actor>();
+	private ArrayList<Actor> occupants = new ArrayList<Actor>();
 	ArrayList<Buildings> buildings = new ArrayList<Buildings>();
 	ArrayList<Field> farmFields = new ArrayList<Field>();
-	  String name;
+	  private String name;
 	  Actor deedOwner;
 	  double workForce;
 	   
 	 //constructor
 	  public Home(String name, Actor builder)
 	  {
-	      this.name=name;
+	      this.setName(name);
 	      this.deedOwner=builder;
 	  }
 	       
@@ -31,24 +31,24 @@ public class Home {
 	          
 	     public void addOccupant(Actor movingIn)
 	     {
-	         occupants.add(movingIn);
+	         getOccupants().add(movingIn);
 	         movingIn.home=this;
 	         
 
-	        if(!this.name.equals("Graveyard")){movingIn.curiculum.append(" Lives in "+this.name+". ");}
+	        if(!this.getName().equals("Graveyard")){movingIn.getCuriculum().append(" Lives in "+this.getName()+". ");}
 	     }
 	     
 	     public void remOccupant(Actor movingOut)
 	     {
 	    	 
-	    	 int A=occupants.indexOf(movingOut);
+	    	 int A=getOccupants().indexOf(movingOut);
 	    	 movingOut.home=null;
-	    	 occupants.remove(A);
+	    	 getOccupants().remove(A);
 	     }
 	     
 	     public String name()
 	     {
-	    	 String A=name;
+	    	 String A=getName();
 	    	 return A;
 	     }
 	     
@@ -56,9 +56,9 @@ public class Home {
 	     {
 	    	 StringBuilder lista =new StringBuilder();
 	    		
-	    	 for(Actor Person : occupants)
+	    	 for(Actor Person : getOccupants())
 	    	 {	
-	    		 lista.append(Person.name+" ");
+	    		 lista.append(Person.getName()+" ");
 
 	    	 }
 	    	 
@@ -72,7 +72,7 @@ public class Home {
 	     public void calcWorkForce (double year)
 	     {
 	    	 	workForce=0;
-	    	for(Actor Person:occupants){
+	    	for(Actor Person:getOccupants()){
 	    		
 	    	
 	    		
@@ -96,5 +96,21 @@ public class Home {
 	    	 
 	    	 return A;
 	     }
+
+		public ArrayList<Actor> getOccupants() {
+			return occupants;
+		}
+
+		public void setOccupants(ArrayList<Actor> occupants) {
+			this.occupants = occupants;
+		}
+
+		public String getName() {
+			return name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
 	     
 }

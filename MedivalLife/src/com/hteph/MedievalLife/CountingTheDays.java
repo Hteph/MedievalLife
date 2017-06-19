@@ -13,18 +13,18 @@ public class CountingTheDays {
 	{			
 		System.out.println(year);
 		
-		for(Home HouseH : village.household)
+		for(Home HouseH : village.getHousehold())
 		{
-			if(HouseH.name!="Graveyard")
+			if(HouseH.getName()!="Graveyard")
 			{
-				int sizeOfHouse=HouseH.occupants.size();
+				int sizeOfHouse=HouseH.getOccupants().size();
 				if(sizeOfHouse>0)
 				{
 				HouseH.calcWorkForce(year);
 				System.out.println(HouseH.getWorkForce());
 
 					ArrayList<Actor> census=new ArrayList<Actor>();
-					census.addAll(HouseH.occupants);
+					census.addAll(HouseH.getOccupants());
 
 					for(Actor Person :census)
 					{

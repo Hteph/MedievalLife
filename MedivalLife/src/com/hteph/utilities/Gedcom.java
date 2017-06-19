@@ -15,42 +15,42 @@ public class Gedcom {
 
 
 		int i=0;
-		for(Family fam:village.families){
+		for(Family fam:village.getFamilies()){
 
-			A+="0 @F"+i+"@ FAM<br />1 HUSB @I"+fam.husb.qNumber()+"@<br />1 WIFE @I"+fam.wife.qNumber()+"@<br />";
+			A+="0 @F"+i+"@ FAM<br />1 HUSB @I"+fam.getHusb().qNumber()+"@<br />1 WIFE @I"+fam.getWife().qNumber()+"@<br />";
 
 
-			for(Actor kid:fam.chil){
+			for(Actor kid:fam.getChil()){
 				
 				A+="1 CHIL @I"+kid.qNumber()+"@<br />";
 
 
 			}
-			A+="1 NCHI "+fam.chil.size()+"<br />";
+			A+="1 NCHI "+fam.getChil().size()+"<br />";
 
 			i++;
 		}
 
-		for(Home household:village.household){
-			for(Actor person:household.occupants){
+		for(Home household:village.getHousehold()){
+			for(Actor person:household.getOccupants()){
 
 				A+="0 @I"+person.qNumber()+"@ INDI<br />";
-				A+="1 NAME "+person.name+" /Wilder/<br />";
+				A+="1 NAME "+person.getName()+" /Wilder/<br />";
 				if(person.qSex().equals("Male")){A+="1 SEX M<br />";}else{A+="1 SEX F<br />";}
 				
-				A+="1 BIRT <br />2 DATE "+(int)person.birthYear+"<br />";
-				if(person.deathYear !=-1){A+="1 DEAT <br />2 DATE "+(int)person.deathYear+"<br />";}	
+				A+="1 BIRT <br />2 DATE "+(int)person.getBirthYear()+"<br />";
+				if(person.getDeathYear() !=-1){A+="1 DEAT <br />2 DATE "+(int)person.getDeathYear()+"<br />";}	
 				
-				for(Family famm:village.families){
-					for(Actor kid:famm.chil){
+				for(Family famm:village.getFamilies()){
+					for(Actor kid:famm.getChil()){
 
-					if(kid.equals(person)){A+="1 FAMC @F"+village.families.indexOf(famm)+"@<br />";}	
+					if(kid.equals(person)){A+="1 FAMC @F"+village.getFamilies().indexOf(famm)+"@<br />";}	
 				}
 				}
 
 
-				for(Family fammy:person.familyHistory){
-				if(fammy.husb.equals(person) || fammy.wife.equals(person)){A+="1 FAMS @F"+village.families.indexOf(fammy)+"@<br />";}			
+				for(Family fammy:person.getFamilyHistory()){
+				if(fammy.getHusb().equals(person) || fammy.getWife().equals(person)){A+="1 FAMS @F"+village.getFamilies().indexOf(fammy)+"@<br />";}			
 				}
 			}
 		}

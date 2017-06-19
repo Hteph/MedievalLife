@@ -5,20 +5,20 @@ public class Family {
 
 	
 
-	Actor husb;
-	Actor wife;
-	ArrayList<Actor> chil= new ArrayList<Actor>();
+	private Actor husb;
+	private Actor wife;
+	private ArrayList<Actor> chil= new ArrayList<Actor>();
 	double marriageDate;
 	
 //constructor
 	public Family( Actor one, Actor another, double year){
 		
 		if (one.qSex().equals("Male")){
-		husb=one;
-		wife=another;
+		setHusb(one);
+		setWife(another);
 		}else{
-			husb=another;
-			wife=one;	
+			setHusb(another);
+			setWife(one);	
 		}
 		
 		
@@ -30,12 +30,12 @@ public class Family {
 //methods
 	public String getGedcom(int nummer){ //the output function
 		
-		String A="0 @"+nummer+"@ FAM<br />1 HUSB @"+husb.qNumber()+"@ <br />2 WIFE @"+wife.qNumber()+"@ <br />";
+		String A="0 @"+nummer+"@ FAM<br />1 HUSB @"+getHusb().qNumber()+"@ <br />2 WIFE @"+getWife().qNumber()+"@ <br />";
 		
-		for(int i=0;i<chil.size();i++){
+		for(int i=0;i<getChil().size();i++){
 			int n=3+i;
 			
-			A+=n+" CHIL @"+chil.get(i).qNumber()+"@<br />";
+			A+=n+" CHIL @"+getChil().get(i).qNumber()+"@<br />";
 		}
 		
 		return A;
@@ -43,7 +43,49 @@ public class Family {
 	
 	
 	public void addChild(Actor child){
-		chil.add(child);
+		getChil().add(child);
+	}
+
+
+
+
+	public ArrayList<Actor> getChil() {
+		return chil;
+	}
+
+
+
+
+	public void setChil(ArrayList<Actor> chil) {
+		this.chil = chil;
+	}
+
+
+
+
+	public Actor getHusb() {
+		return husb;
+	}
+
+
+
+
+	public void setHusb(Actor husb) {
+		this.husb = husb;
+	}
+
+
+
+
+	public Actor getWife() {
+		return wife;
+	}
+
+
+
+
+	public void setWife(Actor wife) {
+		this.wife = wife;
 	}
 	
 }

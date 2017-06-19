@@ -11,33 +11,33 @@ public class Actor {
 
 	int nrOfAttr= ImpConstant.nrOfAttr;
 	//test
-	String name;
+	private String name;
 	String birthplace;
 	Home home;
 	static int actorsCreated=0;
 	private String sex;
 
-	double birthYear; //birthdate with day and month derived from year fractions.
-	double deathYear=-1;
+	private double birthYear; //birthdate with day and month derived from year fractions.
+	private double deathYear=-1;
 	public double[][] attrArray;  //Array to store genetic potential Attribute and current attribute
-	double weight; // weight in lbs
-	int[] pubPot=new int[nrOfAttr]; // this is the random factors that add to the stats in puberty, these may be modified by events further
+	private double weight; // weight in lbs
+	private int[] pubPot=new int[nrOfAttr]; // this is the random factors that add to the stats in puberty, these may be modified by events further
 
-	StringBuilder curiculum =new StringBuilder();
+	private StringBuilder curiculum =new StringBuilder();
 
 	ArrayList<Actor> partners =new ArrayList<Actor>();
 	ArrayList<Actor> children=new ArrayList<Actor>();
 	ArrayList<Trait> traits = new ArrayList<Trait>();
-	ArrayList<String> kenning= new ArrayList<String>();
-	ArrayList<Family> familyHistory=new ArrayList<Family>();
+	private ArrayList<String> kenning= new ArrayList<String>();
+	private ArrayList<Family> familyHistory=new ArrayList<Family>();
 
-	double[] virtueArray= new double[14];	
+	private double[] virtueArray= new double[14];	
 	Family currentFamily;
 
 	//for random characters unknown parents
 
-	Actor father;
-	Actor mother;
+	private Actor father;
+	private Actor mother;
 	//test
 	/* 
 	the virtues going between -5 and 5
@@ -107,44 +107,44 @@ public class Actor {
 	{
 
 		attrArray = new double[nrOfAttr][2];
-		this.father=father;
-		this.mother=mother;
+		this.setFather(father);
+		this.setMother(mother);
 		birthplace="This Village";
 		father.children.add(this);
 		mother.children.add(this);
 
 		home=mother.home;
-		curiculum.append("Born in year "+(int)year+" to "+father.name+" and "+mother.name);
+		getCuriculum().append("Born in year "+(int)year+" to "+father.getName()+" and "+mother.getName());
 
 		if(Math.random()<0.51){sex="Male";}
 		else{sex="Female";}
 
 		if(sex.equals("Male")){
-			curiculum.append(", a son. ");
+			getCuriculum().append(", a son. ");
 
 		}
 		else{
-			curiculum.append(", a daughter. ");
-			name=name+"a";
+			getCuriculum().append(", a daughter. ");
+			setName(getName()+"a");
 		}
 
 		home.addOccupant(this);
-		birthYear=year;
+		setBirthYear(year);
 		attrArray[0][1]=1; //Active
 		attrArray[0][0]=actorsCreated;
 
-		name=a;
-		name=name+" (ID#"+actorsCreated+")";
+		setName(a);
+		setName(getName()+" (ID#"+actorsCreated+")");
 
 		actorsCreated++;
 
 		//default infant attributes, will later be exchanged for a species dependency
 		double infantDefault[]={1,0,1,1,1,1,1,0,1,1,1,1,1,1,1,1,0,0,0,2,1,0};
 		//basic virtues/sins
-		for(int i=1;i<14;i++){virtueArray[i]=(Dice.d6()-Dice.d6())/3;}
+		for(int i=1;i<14;i++){getVirtueArray()[i]=(Dice.d6()-Dice.d6())/3;}
 
-		if(qSex().equals("Male")){mother.curiculum.append(" "+mother.name+" gave birth to a son, named "+name+". ");}
-		else{mother.curiculum.append(mother.name+" gave birth to a daughter, named "+name+". ");}
+		if(qSex().equals("Male")){mother.getCuriculum().append(" "+mother.getName()+" gave birth to a son, named "+getName()+". ");}
+		else{mother.getCuriculum().append(mother.getName()+" gave birth to a daughter, named "+getName()+". ");}
 
 		for(int i=1;i<nrOfAttr;i++){
 
@@ -167,7 +167,7 @@ public class Actor {
 			attrArray[i][0]=genotype;
 			attrArray[i][1]=infantDefault[i];  
 
-			pubPot[i]=1+(int)Math.random()*6;
+			getPubPot()[i]=1+(int)Math.random()*6;
 
 		}
 
@@ -184,31 +184,31 @@ public class Actor {
 		sex=wantedSex;
 		birthplace="Somewhere else";
 		attrArray = new double[nrOfAttr][2];
-		name=a;
+		setName(a);
 
 		//virtues/sins
-		for(int i=1;i<14;i++){virtueArray[i]=Dice.d6()-Dice.d6();}
+		for(int i=1;i<14;i++){getVirtueArray()[i]=Dice.d6()-Dice.d6();}
 
 		attrArray[0][1]=1; //Active
 		attrArray[0][0]=actorsCreated;
 
 
-		birthYear=timeNow-15-Dice.d6();
+		setBirthYear(timeNow-15-Dice.d6());
 
 		if(sex.equals("Male")){
-			curiculum.append(" A man");
+			getCuriculum().append(" A man");
 
 		}
 		else{
-			curiculum.append(" A woman");
-			name=name+"a";
+			getCuriculum().append(" A woman");
+			setName(getName()+"a");
 		}
 
-		name=name+"(ID#"+actorsCreated+")";
+		setName(getName()+"(ID#"+actorsCreated+")");
 
 		actorsCreated++;
 
-		curiculum.append(" that arrived in the year of "+(int)timeNow+". ");
+		getCuriculum().append(" that arrived in the year of "+(int)timeNow+". ");
 
 
 
@@ -225,7 +225,7 @@ public class Actor {
 
 	public double qAge(double a)// calculates age from input date
 	{
-		double A=a-birthYear;
+		double A=a-getBirthYear();
 
 		return A;
 	}
@@ -247,8 +247,8 @@ public class Actor {
 	{
 		partners.add(Person);
 		Person.partners.add(this);
-		curiculum.append("In "+(int)year+" married "+Person.name+". ");
-		Person.curiculum.append("In "+(int)year+" married "+this.name+". ");
+		getCuriculum().append("In "+(int)year+" married "+Person.getName()+". ");
+		Person.getCuriculum().append("In "+(int)year+" married "+this.getName()+". ");
 	}
 
 	public void remPartner(Actor Person)
@@ -286,8 +286,8 @@ public class Actor {
 						int passion=0;
 
 						// Lust is a negative value! Thus it is minus the value in the eq below!!
-						String partnerLust=Dice.testD100(50-Math.pow(partner.virtueArray[1],3)+this.getApp());
-						String ownLust=Dice.testD100(50-Math.pow(this.virtueArray[1],3)+partner.getApp());
+						String partnerLust=Dice.testD100(50-Math.pow(partner.getVirtueArray()[1],3)+this.getApp());
+						String ownLust=Dice.testD100(50-Math.pow(this.getVirtueArray()[1],3)+partner.getApp());
 
 						switch(partnerLust)
 						{
@@ -347,7 +347,7 @@ public class Actor {
 				case "CF": 	attrArray[18][1]+= -1; //Miscarried with complications
 				attrArray[2][1]+= -0.8;
 				case "F" : 	attrArray[2][1]+= -0.2; //Miscarried with some complications
-				curiculum.append(this.name+" lost a child in the year of "+(int)year+". ");
+				getCuriculum().append(this.getName()+" lost a child in the year of "+(int)year+". ");
 				pregnant=false; 
 				break;
 				default: 	break; // All is well
@@ -363,7 +363,7 @@ public class Actor {
 				{
 				case "CF": 	attrArray[2][1]+= -1; //Miscarried with complications
 				attrArray[18][1]+= -2;
-				curiculum.append(this.name+" lost late a child in the year of "+(int)year+". ");
+				getCuriculum().append(this.getName()+" lost late a child in the year of "+(int)year+". ");
 				pregnant=false; 
 				break;
 				default: 	break; // All is well
@@ -405,7 +405,7 @@ public class Actor {
 				case "CF": 	switch(Dice.testD100attr(attrArray[2][1]))
 				{
 				case "CF": 	attrArray[0][0]= 0; //Mother dies, details horrible
-				curiculum.append(this.name+" died in childbirth in the year of "+(int)year+". ");
+				getCuriculum().append(this.getName()+" died in childbirth in the year of "+(int)year+". ");
 				attrArray[0][1]=0;
 				pregnant=false;
 				break;
@@ -425,7 +425,7 @@ public class Actor {
 				case "F":	switch(Dice.testD100attr(attrArray[2][1]))
 				{
 				case "CF": 	attrArray[0][0]= 0; //Mother dies, details horrible
-				curiculum.append(this.name+" died in childbirth in the year of "+(int)year+". ");
+				getCuriculum().append(this.getName()+" died in childbirth in the year of "+(int)year+". ");
 				attrArray[0][1]=0;
 				break;
 				case "F":   attrArray[18][1]+= -4;
@@ -453,7 +453,7 @@ public class Actor {
 
 				children.add(baby);
 				baby.currentFamily=this.currentFamily;
-				this.currentFamily.chil.add(baby);
+				this.currentFamily.getChil().add(baby);
 				pregnant=false;
 				attrArray[18][1]+= -2;
 
@@ -466,7 +466,7 @@ public class Actor {
 					switch(Dice.testD100attr(attrArray[2][1])) //should be modified by living conditions
 					{
 					case "CF": 	baby.attrArray[0][1]= 0; //baby dies suddenly
-					curiculum.append(baby.name+" died during the first year of life. ");
+					getCuriculum().append(baby.getName()+" died during the first year of life. ");
 					i=12;
 					break;
 					case "F":    //here should be at test depending on living condition... when that is implemented!
@@ -492,11 +492,11 @@ public class Actor {
 		}
 
 
-		if(attrArray[2][1]<1){attrArray[0][1]=0;curiculum.append(" In "+(int)year+" "+this.name+" died in bad health. ");}
-		else if(attrArray[5][1]<1){attrArray[0][1]=0;curiculum.append(" In "+(int)year+" "+this.name+" died of lost mind. ");}
-		else if(attrArray[6][1]<1){attrArray[0][1]=0;curiculum.append(" In "+(int)year+" "+this.name+" died posessed by spirits. ");}
-		else if(attrArray[8][1]<1){attrArray[0][1]=0;curiculum.append(" In "+(int)year+" "+this.name+" died of lack of will to live. ");}
-		else if(attrArray[19][1]<1){attrArray[0][1]=0;curiculum.append(" In "+(int)year+" "+this.name+" died of wasting disease. ");}
+		if(attrArray[2][1]<1){attrArray[0][1]=0;getCuriculum().append(" In "+(int)year+" "+this.getName()+" died in bad health. ");}
+		else if(attrArray[5][1]<1){attrArray[0][1]=0;getCuriculum().append(" In "+(int)year+" "+this.getName()+" died of lost mind. ");}
+		else if(attrArray[6][1]<1){attrArray[0][1]=0;getCuriculum().append(" In "+(int)year+" "+this.getName()+" died posessed by spirits. ");}
+		else if(attrArray[8][1]<1){attrArray[0][1]=0;getCuriculum().append(" In "+(int)year+" "+this.getName()+" died of lack of will to live. ");}
+		else if(attrArray[19][1]<1){attrArray[0][1]=0;getCuriculum().append(" In "+(int)year+" "+this.getName()+" died of wasting disease. ");}
 
 		if(attrArray[0][1]==0){	
 
@@ -513,7 +513,7 @@ public class Actor {
 				if(this.partners.size()>0)
 				{
 					home.deedOwner=this.partners.get(0);
-					this.curiculum.append("The partner, "+this.partners.get(0).name+", inherited the deed to "+this.home.name+". ");
+					this.getCuriculum().append("The partner, "+this.partners.get(0).getName()+", inherited the deed to "+this.home.getName()+". ");
 					inheritanceClear=true;
 				} else if (this.children.size()>0)
 				{
@@ -522,7 +522,7 @@ public class Actor {
 						if(child.isAlive())
 						{
 							home.deedOwner=child;
-							this.curiculum.append(" "+child.name+" inherited the deed to "+this.home.name+". ");
+							this.getCuriculum().append(" "+child.getName()+" inherited the deed to "+this.home.getName()+". ");
 							inheritanceClear=true;
 						}
 					}
@@ -531,14 +531,14 @@ public class Actor {
 
 				if(!inheritanceClear)
 				{
-					if(this.home.occupants.size()>1)
+					if(this.home.getOccupants().size()>1)
 					{
-						for(Actor inhabitant:home.occupants)
+						for(Actor inhabitant:home.getOccupants())
 						{
 							if(inhabitant.equals(this))
 							{
 								home.deedOwner=this.children.get(0);
-								this.curiculum.append(" "+inhabitant.name+" inherited the deed to "+this.home.name+". ");
+								this.getCuriculum().append(" "+inhabitant.getName()+" inherited the deed to "+this.home.getName()+". ");
 
 							}
 						}
@@ -552,9 +552,9 @@ public class Actor {
 			home.remOccupant(this);
 			Village.getHome(0).addOccupant(this);
 
-			curiculum.append("In year "+(int)year+" "+this.name+" was buried. ");
+			getCuriculum().append("In year "+(int)year+" "+this.getName()+" was buried. ");
 
-			deathYear=year;
+			setDeathYear(year);
 
 			ArrayList<Actor> partnerList = new ArrayList<Actor>();
 
@@ -586,15 +586,15 @@ public class Actor {
 
 			//going through the whole Village
 
-			for(Home HouseH : village.household)
+			for(Home HouseH : village.getHousehold())
 			{
 				//finding houshold and if it is populated and not the graveyard
-				int sizeOfHouse=HouseH.occupants.size();
-				if(sizeOfHouse>0 && !HouseH.name.equals("Graveyard"))
+				int sizeOfHouse=HouseH.getOccupants().size();
+				if(sizeOfHouse>0 && !HouseH.getName().equals("Graveyard"))
 				{
 					// getting the occupants
 					ArrayList<Actor> census=new ArrayList<Actor>();
-					census.addAll(HouseH.occupants);
+					census.addAll(HouseH.getOccupants());
 
 					for(Actor person :census)
 					{
@@ -611,8 +611,8 @@ public class Actor {
 							if(birthplace.equals("This Village")){
 								testParent=person.children.contains(this);
 								testChild=this.children.contains(person);
-								testMother=this.mother.equals(person.mother);
-								testFather=this.father.equals(person.father);
+								testMother=this.getMother().equals(person.getMother());
+								testFather=this.getFather().equals(person.getFather());
 
 							}
 							if(!testParent && !testChild && !testMother && !testFather){
@@ -646,14 +646,14 @@ public class Actor {
 					eligblePartners.remove(0);
 				}
 
-				curiculum.append(" In the year "+(int)year+" "+name+" was courting "+target.name+". ");
+				getCuriculum().append(" In the year "+(int)year+" "+getName()+" was courting "+target.getName()+". ");
 				//Do they like your looks		
 
 				String testApp=Dice.testD100attr(this.getApp());
 
 				//Are they needy? To lust passion is an small appearance effect added
 
-				String partnerLust=Dice.testD100(50-Math.pow(target.virtueArray[1],3)+(this.getApp()-10)*2);
+				String partnerLust=Dice.testD100(50-Math.pow(target.getVirtueArray()[1],3)+(this.getApp()-10)*2);
 
 				int passion=0;
 				//Calculationg the passion for marriage, more mods (economical) should be added
@@ -682,7 +682,7 @@ public class Actor {
 					target.addPartner(this, year);
 
 					Family family=new Family(target, this, year);
-					village.families.add(family);
+					village.getFamilies().add(family);
 					target.addFamily(family);
 					this.addFamily(family);
 
@@ -700,7 +700,7 @@ public class Actor {
 
 			if(this.partners.size()<1){
 				int desperation;
-				String postagePartner=Dice.testD100attr(getWill()-virtueArray[1]);	
+				String postagePartner=Dice.testD100attr(getWill()-getVirtueArray()[1]);	
 				switch(postagePartner)
 				{
 				case "CF": desperation=-5; break;
@@ -715,7 +715,7 @@ public class Actor {
 
 					//should add code for the problem of finding someone!
 
-					curiculum.append(" In the year of "+year+" "+name+" travelled to a far town to find a lifepartner. ");
+					getCuriculum().append(" In the year of "+year+" "+getName()+" travelled to a far town to find a lifepartner. ");
 					String partnerSex;
 					if(this.qSex().equals("Male")){partnerSex="Female";}
 					else{partnerSex="Male";}		
@@ -727,7 +727,7 @@ public class Actor {
 					Partner.addPartner(this, year);
 					home.addOccupant(Partner);
 					Family family=new Family(Partner, this, year);
-					village.families.add(family);
+					village.getFamilies().add(family);
 					Partner.addFamily(family);
 					this.addFamily(family);
 				}
@@ -738,7 +738,7 @@ public class Actor {
 	private void addFamily(Family family) {
 
 		currentFamily=family; 
-		familyHistory.add(family);
+		getFamilyHistory().add(family);
 
 	}
 
@@ -754,6 +754,116 @@ public class Actor {
 	private double getApp() {
 		int A=(int)attrArray[10][1];
 		return A;
+	}
+
+
+	public Actor getMother() {
+		return mother;
+	}
+
+
+	public void setMother(Actor mother) {
+		this.mother = mother;
+	}
+
+
+	public double[] getVirtueArray() {
+		return virtueArray;
+	}
+
+
+	public void setVirtueArray(double[] virtueArray) {
+		this.virtueArray = virtueArray;
+	}
+
+
+	public Actor getFather() {
+		return father;
+	}
+
+
+	public void setFather(Actor father) {
+		this.father = father;
+	}
+
+
+	public int[] getPubPot() {
+		return pubPot;
+	}
+
+
+	public void setPubPot(int[] pubPot) {
+		this.pubPot = pubPot;
+	}
+
+
+	public StringBuilder getCuriculum() {
+		return curiculum;
+	}
+
+
+	public void setCuriculum(StringBuilder curiculum) {
+		this.curiculum = curiculum;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public double getWeight() {
+		return weight;
+	}
+
+
+	public void setWeight(double weight) {
+		this.weight = weight;
+	}
+
+
+	public double getBirthYear() {
+		return birthYear;
+	}
+
+
+	public void setBirthYear(double birthYear) {
+		this.birthYear = birthYear;
+	}
+
+
+	public double getDeathYear() {
+		return deathYear;
+	}
+
+
+	public void setDeathYear(double deathYear) {
+		this.deathYear = deathYear;
+	}
+
+
+	public ArrayList<String> getKenning() {
+		return kenning;
+	}
+
+
+	public void setKenning(ArrayList<String> kenning) {
+		this.kenning = kenning;
+	}
+
+
+	public ArrayList<Family> getFamilyHistory() {
+		return familyHistory;
+	}
+
+
+	public void setFamilyHistory(ArrayList<Family> familyHistory) {
+		this.familyHistory = familyHistory;
 	}
 
 }

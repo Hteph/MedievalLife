@@ -109,20 +109,20 @@ public class ComingOfAge {
 
 		//test for parents Sin/Virtue
 		
-		for(int i=1;i<Youngster.virtueArray.length;i++){
+		for(int i=1;i<Youngster.getVirtueArray().length;i++){
 			
-			if(Dice.d6()<Math.abs(Youngster.mother.virtueArray[i])){
+			if(Dice.d6()<Math.abs(Youngster.getMother().getVirtueArray()[i])){
 				
 				double will=willPowerResistance(Youngster);
-				double change=(Youngster.mother.virtueArray[i]-Youngster.virtueArray[i])*2*will/Dice.d6();
-				Youngster.virtueArray[i]+=change;
+				double change=(Youngster.getMother().getVirtueArray()[i]-Youngster.getVirtueArray()[i])*2*will/Dice.d6();
+				Youngster.getVirtueArray()[i]+=change;
 
 			}
 			
-			if(Dice.d6()<Math.abs(Youngster.father.virtueArray[i])){
+			if(Dice.d6()<Math.abs(Youngster.getFather().getVirtueArray()[i])){
 				double will=willPowerResistance(Youngster);
-				double change=(Youngster.mother.virtueArray[i]-Youngster.virtueArray[i])*will/Dice.d6();
-				Youngster.virtueArray[i]+=change;
+				double change=(Youngster.getMother().getVirtueArray()[i]-Youngster.getVirtueArray()[i])*will/Dice.d6();
+				Youngster.getVirtueArray()[i]+=change;
 
 			}
 			
@@ -142,7 +142,7 @@ public class ComingOfAge {
 		double timeRange=juvenilAgeMods[0];
 
 		for(int i=1;i<nrOfAttr;i++){
-			Juvenil.attrArray[i][1]+=(Juvenil.attrArray[i][0]*juvenilAgeMods[i]+Juvenil.pubPot[i])/timeRange;
+			Juvenil.attrArray[i][1]+=(Juvenil.attrArray[i][0]*juvenilAgeMods[i]+Juvenil.getPubPot()[i])/timeRange;
 		}
 
 
@@ -156,22 +156,22 @@ public class ComingOfAge {
 				Juvenil.attrArray[i][1]+=Juvenil.attrArray[i][1]*humanFemale[i]/timeRange;
 				
 				//Parental influence on personality
-				for(int n=1;n<Juvenil.virtueArray.length;n++){
+				for(int n=1;n<Juvenil.getVirtueArray().length;n++){
 					
 					
 					
 					
-					if(Dice.d6()<Math.abs(Juvenil.mother.virtueArray[n])){
+					if(Dice.d6()<Math.abs(Juvenil.getMother().getVirtueArray()[n])){
 						double will=willPowerResistance(Juvenil);
-						double change=(Juvenil.mother.virtueArray[n]-Juvenil.virtueArray[n])*2*will/Dice.d6();
-						Juvenil.virtueArray[n]+=change;
+						double change=(Juvenil.getMother().getVirtueArray()[n]-Juvenil.getVirtueArray()[n])*2*will/Dice.d6();
+						Juvenil.getVirtueArray()[n]+=change;
 
 					}
 					
-					if(Dice.d6()<Math.abs(Juvenil.father.virtueArray[n])){
+					if(Dice.d6()<Math.abs(Juvenil.getFather().getVirtueArray()[n])){
 						double will=willPowerResistance(Juvenil);
-						double change=(Juvenil.mother.virtueArray[n]-Juvenil.virtueArray[n])*will/Dice.d6();
-						Juvenil.virtueArray[n]+=change;
+						double change=(Juvenil.getMother().getVirtueArray()[n]-Juvenil.getVirtueArray()[n])*will/Dice.d6();
+						Juvenil.getVirtueArray()[n]+=change;
 
 					}
 					
@@ -179,19 +179,19 @@ public class ComingOfAge {
 				
 			}
 		}else{
-			for(int i=1;i<Juvenil.virtueArray.length;i++){
+			for(int i=1;i<Juvenil.getVirtueArray().length;i++){
 				
-				if(Dice.d6()<Math.abs(Juvenil.mother.virtueArray[i])){
+				if(Dice.d6()<Math.abs(Juvenil.getMother().getVirtueArray()[i])){
 					double will=willPowerResistance(Juvenil);
-					double change=(Juvenil.mother.virtueArray[i]-Juvenil.virtueArray[i])*will/Dice.d6();
-					Juvenil.virtueArray[i]+=change;
+					double change=(Juvenil.getMother().getVirtueArray()[i]-Juvenil.getVirtueArray()[i])*will/Dice.d6();
+					Juvenil.getVirtueArray()[i]+=change;
 
 				}
 				
-				if(Dice.d6()<Math.abs(Juvenil.father.virtueArray[i])){
+				if(Dice.d6()<Math.abs(Juvenil.getFather().getVirtueArray()[i])){
 					double will=willPowerResistance(Juvenil);
-					double change=(Juvenil.father.virtueArray[i]-Juvenil.virtueArray[i])*3*will/Dice.d6();
-					Juvenil.virtueArray[i]+=change;
+					double change=(Juvenil.getFather().getVirtueArray()[i]-Juvenil.getVirtueArray()[i])*3*will/Dice.d6();
+					Juvenil.getVirtueArray()[i]+=change;
 
 				}
 				
@@ -200,7 +200,7 @@ public class ComingOfAge {
 		
 		//and then, in the end,  who understand where teenagers get their ideas from?
 		
-		for(int i=1;i<14;i++){Juvenil.virtueArray[i]+=(Dice.d6()-Dice.d6())/5;}
+		for(int i=1;i<14;i++){Juvenil.getVirtueArray()[i]+=(Dice.d6()-Dice.d6())/5;}
 
 	}
 
@@ -212,7 +212,7 @@ public class ComingOfAge {
 		double lifeExpectancy=Person.attrArray[21][1]*3+40;
 
 		if(age>lifeExpectancy/2){ //aging starts ~35
-			double fate=Math.random()-Person.virtueArray[11]/10-Person.virtueArray[2]/20;
+			double fate=Math.random()-Person.getVirtueArray()[11]/10-Person.getVirtueArray()[2]/20;
 
 			if(fate>0.9){CatastrophicAilment(Person, year);}
 			else if(fate>0.8){DegenerativeIllness(Person, year);}
@@ -239,30 +239,30 @@ public class ComingOfAge {
 
 		switch(Dice.d6()){
 
-		case 1: Person.curiculum.append(Person.name+" is pained by arthriris during most of the year "+(int)year+". ");
+		case 1: Person.getCuriculum().append(Person.getName()+" is pained by arthriris during most of the year "+(int)year+". ");
 		Person.attrArray[3][1]+= -Dice.d6();
 		Person.attrArray[4][1]+= -Dice.d6()/2;
 		break;
 
-		case 2: Person.curiculum.append(Person.name+" lost the light of the eyes during the year "+(int)year+". ");
+		case 2: Person.getCuriculum().append(Person.getName()+" lost the light of the eyes during the year "+(int)year+". ");
 		Person.attrArray[11][1]+= -Dice.d6();
 		break;
 
-		case 3:  Person.curiculum.append(Person.name+" become afflicted by diabetes during the year "+(int)year+". ");
+		case 3:  Person.getCuriculum().append(Person.getName()+" become afflicted by diabetes during the year "+(int)year+". ");
 		Person.attrArray[1][1]+= -Dice.d6();
 		Person.attrArray[2][1]+= -Dice.d6()+2;
 		break;
 
-		case 4: Person.curiculum.append(Person.name+" is pained by gout during most of the year "+(int)year+". ");
+		case 4: Person.getCuriculum().append(Person.getName()+" is pained by gout during most of the year "+(int)year+". ");
 		Person.attrArray[4][1]+= -Dice.d6();
 		break;
 
-		case 5: Person.curiculum.append(Person.name+" starts suffering from a clouded mind in the of year "+(int)year+". ");
+		case 5: Person.getCuriculum().append(Person.getName()+" starts suffering from a clouded mind in the of year "+(int)year+". ");
 		Person.attrArray[5][1]+= -Dice.d6();
 		Person.attrArray[8][1]+= -Dice.d6();
 		break;
 
-		default:Person.curiculum.append(Person.name+" is disgracefully aged during of the year "+(int)year+". ");
+		default:Person.getCuriculum().append(Person.getName()+" is disgracefully aged during of the year "+(int)year+". ");
 		Person.attrArray[10][1]+= -Dice.d6();
 		Person.attrArray[9][1]+= -Dice.d6()/2;
 		break;
@@ -273,7 +273,7 @@ public class ComingOfAge {
 	static void CatastrophicAilment(Actor Person, double year)
 	{
 
-		Person.curiculum.append("In the year of "+(int)year+" "+ Person.name+" fell serious ill."); 
+		Person.getCuriculum().append("In the year of "+(int)year+" "+ Person.getName()+" fell serious ill."); 
 		switch(Dice.testD100attr(Person.attrArray[2][1])){
 
 
@@ -319,7 +319,7 @@ public class ComingOfAge {
 
 	static void WeightChange(Actor Person)
 	{
-		Person.weight*=1.1; //actually this should check for living condition so there is food...
+		Person.setWeight(Person.getWeight() * 1.1); //actually this should check for living condition so there is food...
 	}
 
 

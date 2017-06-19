@@ -6,8 +6,8 @@ import java.util.ArrayList;
 
 public class Settlement {
 
-	ArrayList<Home> household = new ArrayList<Home>();
-	ArrayList<Family> families= new ArrayList<Family>();
+	private ArrayList<Home> household = new ArrayList<Home>();
+	private ArrayList<Family> families= new ArrayList<Family>();
 	
 	String name;
 	
@@ -23,23 +23,43 @@ public class Settlement {
 	
 	public void addHousehold(Home houseH)
 	{
-		household.add(houseH);
+		getHousehold().add(houseH);
 	}
 	
 	public int countHousehold()
 	{
-		int A=household.size();
+		int A=getHousehold().size();
 		return A;
 	}
 	
 	public Home getHome(int i)
 	{
-		Home A=household.get(i);
+		Home A=getHousehold().get(i);
 		return A;
 	}
 	
 	public void addFamily(Family family){
-		families.add(family);
+		getFamilies().add(family);
+	}
+
+
+	public ArrayList<Home> getHousehold() {
+		return household;
+	}
+
+
+	public void setHousehold(ArrayList<Home> household) {
+		this.household = household;
+	}
+
+
+	public ArrayList<Family> getFamilies() {
+		return families;
+	}
+
+
+	public void setFamilies(ArrayList<Family> families) {
+		this.families = families;
 	}
 	
 }

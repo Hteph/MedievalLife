@@ -101,36 +101,36 @@ public class MedivalLifeGen {
 		
 		String chronicle;
 
-		chronicle="<h2>In the year of "+startingYear+" "+Pop.name+" took to the woods to start a new life as his own man.</h2>";
+		chronicle="<h2>In the year of "+startingYear+" "+Pop.getName()+" took to the woods to start a new life as his own man.</h2>";
 		chronicle+="<h3>This is his clan after "+yearsToSimulate+" years. </h3>";
 
 
 
-			for(Home HouseH : Village.household)
+			for(Home HouseH : Village.getHousehold())
 			{
 
-				int sizeOfHouse=HouseH.occupants.size();
+				int sizeOfHouse=HouseH.getOccupants().size();
 				if(sizeOfHouse>0)
 				{
 
 
 					ArrayList<Actor> census=new ArrayList<Actor>();
-					census.addAll(HouseH.occupants);
+					census.addAll(HouseH.getOccupants());
 
-					chronicle+="-----------At "+HouseH.name+" -------------<br />";
+					chronicle+="-----------At "+HouseH.getName()+" -------------<br />";
 					chronicle+="------------------------------------------<br />";
 
 					for(Actor Person :census)
 					{
 
-						if(Person.deathYear==-1){chronicle+=Person.name+"("+Person.qSex()+")("+(int)Person.birthYear+"- "+").<br />";}
-						else{chronicle+=Person.name+"("+(int)Person.birthYear+"- "+(int)Person.deathYear+").<br />";}
-						chronicle+=Person.curiculum.toString()+"<br />";
+						if(Person.getDeathYear()==-1){chronicle+=Person.getName()+"("+Person.qSex()+")("+(int)Person.getBirthYear()+"- "+").<br />";}
+						else{chronicle+=Person.getName()+"("+(int)Person.getBirthYear()+"- "+(int)Person.getDeathYear()+").<br />";}
+						chronicle+=Person.getCuriculum().toString()+"<br />";
 						
-						if(Person.kenning.size()>0){
+						if(Person.getKenning().size()>0){
 							
 							
-							String aka=Person.kenning.toString();
+							String aka=Person.getKenning().toString();
 							
 							
 							chronicle+="(aka: "+aka+")<br />";
