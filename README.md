@@ -6,4 +6,7 @@ This was started when I strated to learn Java from the ground (it shows) now I g
 It is a app for generating a dynasty tree (for use as a background of an RPG character, or just to populate a small medival hamlet) with code for the common heritage software appended at the end.
 It generates a simple text file for now.
 
-v. 0.1 Delivers basic output in a acceptable structure.
+
+CURRENT STATUS: On hiatus until the frontend part of my "full-stack" dev course starts
+
+v. 0.1 Delivers basic output in a acceptable structure (this was created while taking an online VERY basic course).
