@@ -7,6 +7,6 @@ It is a app for generating a dynasty tree (for use as a background of an RPG cha
 It generates a simple text file for now.
 
 
-CURRENT STATUS: On hiatus until the frontend part of my "full-stack" dev course starts
+CURRENT STATUS: On hiatus until the frontend part of my "full-stack" dev course starts, some connection setup towards a webserver made (redhat openshift).
 
 v. 0.1 Delivers basic output in a acceptable structure (this was created while taking an online VERY basic course).
