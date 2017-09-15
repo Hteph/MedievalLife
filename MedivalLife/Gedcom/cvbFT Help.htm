@@ -1,0 +1,769 @@
+<!doctype html public '-//W3C//DTD HTML 4.03//EN' 'http://www.w3.org/TR/REC-html40/strict.dtd'>
+<html>
+ <head>
+  <meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+  <title>cvbFT Help</title>
+  <style type='text/css'>
+   body
+    {
+     background-color:#F7FEF0;
+    }
+   table
+    {
+     margin-left:50px;
+     width:850px;
+     border-bottom:thick solid #008000;
+    }
+   p
+    {
+     margin-left:50px;
+     font-size:10.0pt;
+     font-family:Verdana;
+     width:750px;
+    }
+   ul
+    {
+     width:750px;
+    }
+   li
+    {
+     margin-left:30px;
+     font-size:10.0pt;
+     font-family:Verdana;
+    }
+   h1
+    {
+     margin-left:50px;
+     font-size:16.0pt;
+     font-family:Verdana;
+     font-weight:bold;
+     text-decoration:underline;
+     color:#008000;
+    }
+   h2
+    {
+     margin-left:50px;
+     font-size:14.0pt;
+     font-family:Verdana;
+     font-weight:bold;
+     text-decoration:underline;
+     color:#008000;
+    }
+   h3
+    {
+     margin-left:50px;
+     font-size:11.0pt;
+     font-family:Verdana;
+     font-weight:bold;
+     color:#008000;
+    }
+   h4
+    {
+     margin-left:50px;
+     font-size:10.0pt;
+     font-family:Verdana;
+     font-weight:bold;
+     color:#008000;
+    }
+   .contents
+    {
+     font-size:10.0pt;
+     font-family:Verdana;
+     font-weight:bold;
+    }
+   .contents-h
+    {
+     height:60px;
+     margin-left:0;
+     font-size:14.0pt;
+     font-family:Verdana;
+     font-weight:bold;
+     color:#008000;
+     vertical-align:bottom;
+    }
+   .contents-h1
+    {
+     font-size:11.0pt;
+    }
+   .contents-h2
+    {
+     margin-left:15px;
+    }
+   .contents-h3
+    {
+     margin-left:45px;
+    }
+   .gototop
+    {
+     position:absolute;
+     left:800px;
+     background-color:#CBF99D;
+     font-size:8.0pt;
+     font-family:Verdana;
+     font-weight:bold;
+     color:#008000;
+     border-top:thin solid #FFFFFF;
+     border-bottom:thin solid #008000;
+     border-left:thin solid #FFFFFF;
+     border-right:thin solid #008000;
+    }
+   .logo-top
+    {
+     background-color:#CBF99D;
+     font-size:48.0pt;
+     text-align:center;
+     font-family:Times New Roman;
+     font-weight:bold; color:#008000;
+     color:#008000;
+     border-top:thick solid #FFFFFF;
+     border-left:thick solid #FFFFFF;
+     border-right:thick solid #008000;
+    }
+   .logo-bottom
+    {
+     background-color:#CBF99D;
+     font-size:11.0pt;
+     text-align:center;
+     font-family:Verdana;
+     font-weight:bold;
+     color:#008000;
+     border-bottom:thick solid #008000;
+     border-left:thick solid #FFFFFF;
+     border-right:thick solid #008000;
+     vertical-align:top;
+    }
+   .version
+    {
+     width:520px;
+     font-size:8.0pt;
+     font-family:Verdana;
+     color:#008000;
+     text-align:right;
+     vertical-align:bottom;
+    }
+  </style>
+ </head>
+
+ <body>
+  <div><a name=top></a></div>
+  <table cellspacing=0>
+   <tr><td class='logo-top'>cvbFT</td></tr>
+   <tr style='height:30px'><td class='logo-bottom'>Family Tree database</td><td class='version'>Help for v4.04</td></tr>
+   <tr style='height:1px'><td colspan=2  style='border-bottom:thick solid #008000'>&nbsp;</td></tr>
+  </table>
+  <table class='contents' cellspacing=0>
+   <tr class='contents-h'><td>Contents</td></tr>
+   <tr><td><a href='#1' class='contents-h1'>1 Overview</a></td></tr>
+   <tr><td><a href='#1_1' class='contents-h2'>1.1 Scope</a></td></tr>
+   <tr><td><a href='#1_2' class='contents-h2'>1.2 Tecnical Overview</a></td></tr>
+   <tr><td><a href='#1_3' class='contents-h2'>1.3 Changes Since Previous Versions</a></td></tr>
+   <tr><td><a href='#2' class='contents-h1'>2 Installation</a></td></tr>
+   <tr><td><a href='#2_1' class='contents-h2'>2.1 Macro security</a></td></tr>
+   <tr><td><a href='#2_1_1' class='contents-h3'>2.1.1 Excel 2003</a></td></tr>
+   <tr><td><a href='#2_1_2' class='contents-h3'>2.1.2 Excel 2007</a></td></tr>
+   <tr><td><a href='#2_2' class='contents-h2'>2.2 First use</a></td></tr>
+   <tr><td><a href='#2_3' class='contents-h2'>2.3 Switching between Windows XP and Vista (and vice versa)</a></td></tr>
+   <tr><td><a href='#3' class='contents-h1'>3 Functions</a></td></tr>
+   <tr><td><a href='#3_1' class='contents-h2'>3.1 View menu</a></td></tr>
+   <tr><td><a href='#3_1_1' class='contents-h3'>3.1.1 Person</a></td></tr>
+   <tr><td><a href='#3_1_2' class='contents-h3'>3.1.2 Tree</a></td></tr>
+   <tr><td><a href='#3_1_3' class='contents-h3'>3.1.3 Ancestors</a></td></tr>
+   <tr><td><a href='#3_1_4' class='contents-h3'>3.1.4 Descendants</a></td></tr>
+   <tr><td><a href='#3_2' class='contents-h2'>3.2 Edit menu</a></td></tr>
+   <tr><td><a href='#3_2_1' class='contents-h3'>3.2.1 Add Person</a></td></tr>
+   <tr><td><a href='#3_2_2' class='contents-h3'>3.2.2 Edit Person</a></td></tr>
+   <tr><td><a href='#3_3' class='contents-h2'>3.3 Maintain menu</a></td></tr>
+   <tr><td><a href='#3_3_1' class='contents-h3'>3.3.1 Edit Sources list</a></td></tr>
+   <tr><td><a href='#3_3_2' class='contents-h3'>3.3.2 Preferences</a></td></tr>
+   <tr><td><a href='#3_3_3' class='contents-h3'>3.3.3 Event Types</a></td></tr>
+   <tr><td><a href='#3_3_4' class='contents-h3'>3.3.4 Living Persons</a></td></tr>
+   <tr><td><a href='#3_3_5' class='contents-h3'>3.3.5 Validate</a></td></tr>
+   <tr><td><a href='#3_4' class='contents-h2'>3.4 Import menu</a></td></tr>
+   <tr><td><a href='#3_4_1' class='contents-h3'>3.4.1 GEDCOM</a></td></tr>
+   <tr><td><a href='#3_5' class='contents-h2'>3.5 Export menu</a></td></tr>
+   <tr><td><a href='#3_5_1' class='contents-h3'>3.5.1 GEDCOM</a></td></tr>
+   <tr><td><a href='#3_5_2' class='contents-h3'>3.5.2 HTML Web pages</a></td></tr>
+   <tr><td><a href='#3_6' class='contents-h2'>3.6 Upgrade</a></td></tr>
+   <tr><td><a href='#4' class='contents-h1'>4 Technical Details</a></td></tr>
+   <tr><td><a href='#4_1' class='contents-h2'>4.1 Database Contents</a></td></tr>
+   <tr><td><a href='#4_1_1' class='contents-h3'>4.1.1 Cover</a></td></tr>
+   <tr><td><a href='#4_1_2' class='contents-h3'>4.1.2 Individual</a></td></tr>
+   <tr><td><a href='#4_1_3' class='contents-h3'>4.1.3 Events</a></td></tr>
+   <tr><td><a href='#4_1_4' class='contents-h3'>4.1.4 Photos</a></td></tr>
+   <tr><td><a href='#4_1_5' class='contents-h3'>4.1.5 Docts</a></td></tr>
+   <tr><td><a href='#4_1_6' class='contents-h3'>4.1.6 Multimedia</a></td></tr>
+   <tr><td><a href='#4_1_7' class='contents-h3'>4.1.7 Family</a></td></tr>
+   <tr><td><a href='#4_1_8' class='contents-h3'>4.1.8 Notes</a></td></tr>
+   <tr><td><a href='#4_1_9' class='contents-h3'>4.1.9 Sources</a></td></tr>
+   <tr><td><a href='#4_2' class='contents-h2'>4.2 Common Data Formats</a></td></tr>
+   <tr><td><a href='#4_2_1' class='contents-h3'>4.2.1 Source Identifiers</a></td></tr>
+   <tr><td><a href='#4_2_2' class='contents-h3'>4.2.2 Dates</a></td></tr>
+   <tr><td><a href='#4_3' class='contents-h2'>4.3 OtherWorksheets</a></td></tr>
+   <tr><td><a href='#4_4' class='contents-h2'>4.4 Visual Basic for Applications</a></td></tr>
+   <tr><td><a href='#4_5' class='contents-h2'>4.5 Support</a></td></tr>
+   <tr style='height:30'><td></td></tr>
+  </table>
+
+  <h1><a name=1></a>1 Overview<a href='#top' class='gototop'>Contents</a></h1>
+   <p>cvbFT is a simple to use application for the recording and viewing of information relating to family history.  It was developed for my own personal use but is freely available to anyone else who wishes to make use of its features.</p>
+   <h2><a name=1_1></a>1.1 Scope<a href='#top' class='gototop'>Contents</a></h2>
+    <p>cvbFT supports a range of facilities to allow the creation, display and export of a family tree, including:</p>
+    <ul>
+     <li>Adding and editing individuals</li>
+     <li>Specifying parents</li>
+     <li>Recording partners and marriage details</li>
+     <li>Recording life events eg. Baptism, Occupations</li>
+     <li>Recording sources for items of information</li>
+     <li>Linking in digital photographs, documents, audio and video</li>
+     <li>Displaying data as a family tree</li>
+     <li>Displaying diagrams showing ancestors and descendants</li>
+     <li>Importing and exporting GEDCOM files</li>
+     <li>Creating files for use on a web site</li>
+    </ul>
+   <h2><a name=1_2></a>1.2 Technical Overview<a href='#top' class='gototop'>Contents</a></h2>
+    <p>cvbFT is built on Microsoft Excel.  It was originally developed on MS Excel 2003 but modifications in v4.04 and later have only been tested using Excel 2007 (and Excel 2010) running on Windows 7. Although new features may run on older versions of Excel and Windows, they are no longer specifically tested and are not officially supported so you are on your own if you try!!</p>
+   <h2><a name=1_3></a>1.3 Changes Since Previous Versions<a href='#top' class='gototop'>Contents</a></h2>
+    <h3>v4.05 (???? 2013):</h3>
+     <ul>
+      <li>Added option to store backup file when saving</li>
+       <ul>
+        <li>Only works when the file is saved using the &lsquo;Save&rsquo; or &lsquo;Save & Exit&rsquo; buttons</li>
+        <li>Backup file has date (yyyymmdd) appended to name</li>
+        <li>Enabled using a &lsquo;Preferences&rsquo; option on the &lsquo;Application&rsquo; tab</li>
+       </ul>
+      <li>Added the ability to include a photo on the &lsquo;Individual&rsquo; web page</li>
+       <ul>
+        <li>The facility can be truned on and off on the &lsquo;Web:Main&rsquo; tab within &lsquo;Preferences&rsquo;</li>
+        <li>A Photo can be selected on the &lsquo;Photos&rsquo; tab when editing a person&rsquo;s record</li>
+        <li>The photo is shown on the rights hand side of the &lsquo;Individual&rsquo; page on the seb site</lI>
+       </ul>
+      <li>If a Date of Death is known, it is displayed against the person when they are shown in the View Tree option.</li>
+      <li>If a note starts with a full url (&lsquo;http://...&rsquo; or &lsquo;https://...&rsquo;) then the web page is opened in the note window when the web page is opened./</li>
+      <li>Made the forms allowing selection of a person and a source wider so that more comprehensive information is displayed to allow better selection.</li>
+      <li>The background for the web pages can be an image as well as a block colour. This involves an additional prompt on the &lsquo;Web:Style&rsquo; Preferences page as well as additional storage and processing to utilise this information.</li>
+      <li>Images/Icons are now displayed on the web page for Documents that cannot display thumbnails on web pages.</li>
+      <li>Resolved a number of defects relating to the display and use of the icons for Google Maps and the Notes page for a number of fields.</li>
+      <li>Resolved a number of minor cosmetic defects.</li>
+     </ul>
+    <h3>v4.04 (January 2013):</h3>
+     <ul>
+      <li>Added support for Adobe pdf format documents on a person&rsquo;s record</li>
+      <li>Added facility to record text notes for specific  components of an individual&rsquo;s record (Name, Birth, Death, Events, Family and Partnerships).</li>
+       <ul>
+        <li>Supported note types are stored when data is loaded using the <a href='#3_4_1'>GEDCOM Import</a></li>
+        <li>Notes are included in the full <a href='#3_5_1'>GEDCOM Export</a></li>
+        <li>Notes are available in <a href='#3_1_1'>View Person</a></li>
+        <li>Notes can optionally be included in generated <a href='#3_5_2'>web pages</a></li>
+       </ul>
+      <li>Added the ability to record GPS locations for key events (birth, marriage, burial etc.). Once recorded these locations can be used to display the location using Google Maps.</li>
+       <ul>
+        <li>When entering a GPS coordinate a &lsquo;GPS Wizard&rsquo; is available to assist entry</li>
+        <li>GPS co-ordinates and links to Google Maps are available in <a href='#3_1_1'>View Person</a></li>
+        <li>Links to Google Maps can optionally be included on generated <a href='#3_5_2'>web pages</a>s</li>
+       </ul>
+      <li>Significant reduction in the size of many Descendant web pages</li>
+      <li>Corrected an error where Multimedia files were not always included on a person&rsquo;s web page</li>
+      <li>Corrected a display problem for the information sources when viewing a person record</li>
+      <li>Modified some code to work correctly in Excel 2010 as well as Excel 2007</li>
+     </ul>
+    <h3>v4.02 & v4.03 were made available as beta releases to test the enhancements released in v4.04</h3>
+    <h3>v4.01 (November 2010):</h3>
+     <ul>
+      <li>Modified and tested for use with Excel 2007 running on Windows 7</li>
+      <li>A general tidy up of much of the VBA code</li>
+      <li>Fixes for a number of annoying features</li>
+     </ul>
+    <h3>v3.04 (September 2009):</h3>
+     <p>This release includes a fix to compile errors being experienced by some (but curiously, not all) users. <i>For the more technically minded this was caused by a spurious reference to RefEdit.dll that is not required.</i></p>
+    <h3>v3.03 (August 2009):</h3>
+     <p>Included a couple of suggested improvements:</p>
+     <ul>
+      <li>Fixed a problem that caused an error when upgrading from a version older than 2.06.</li>
+      <li>When generating web pages and GEDCOm files, a 'progress bar' is shown to show how complete each step of the process currently is.</li>
+      <li>A new button has been added to allow the MS Office 2007 'Ribbon' to be hidden when using the cvbFT default layout.</li>
+     </ul>
+    <h3>v3.02 (September 2008):</h3>
+     <p>Included a couple of suggested improvements:</p>
+     <ul>
+      <li>Display of a person&rsquo;s tree, ancestors and descendants now uses full screen mode and always ensures that the horizontal scroll bar is visible.</li>
+      <li>Improvement to the generated HTML for the &lsquo;Individual&rsquo pages of the exported web site reducing their size.</li>
+     </ul>
+    <h3>v3.01 (September 2008):</h3>
+     <p>This is a significant new release that includes the following:</p>
+     <ul>
+      <li>Much of the software has been reviewed and tidied up resulting in a number of performance improvements.</li>
+      <li>The management of <a href='#3_3_2'>user preferences</a> has been tidied up. Preferences are now divided into a number of groups - Application, GEDCOM, Living Persons & Web - making it easier to find the required feature.</li>
+      <li>The way in which preferences are <a href='#4_3'>stored</a> has been updated.</li>
+      <li>Additional <a href='#3_3_2_1'>screen display modes</a> are now available.</li>
+      <li>The colours and font used for generated web pages can be <a href='#3_3_2_5'>modified</a>.</li>
+      <li>A personalised header can now be <a href='#3_3_2_4'>specified</a> for the generated web pages.</li>
+      <li>A meta description and and meta keywords can be <a href='#3_3_2_4'>specified</a> for inclusion in the front page to improve web search indexing and display.</li>
+      <li>More &lsquo;style&rsquo; information has been moved to stylesheets, reducing the size of generated HTML by around 5% (actual reduction depends on many factors and will vary depending on actual family tree content).</li>
+      <li>Input validation has been improved to help ensure data quality.</li>
+      <li>The application appearance has been updated.</li>
+     </ul>
+    <h3>v2.09 (May 2008):</h3>
+     <p>A maintenence release that addresses a small number of inconsistencies in the display of information.</p>
+    <h3>v2.08 (April 2008):</h3>
+    <ul>
+     <li>A progress message is displayed during the creation of a GEDCOM file for export.</li>
+     <li>The html text and css stylesheets that are created by the web export have been improved to work correctly with a wider variety of browsers.</li>
+     <li>A new facility to enable users to add and use additional types of event.  See the function <a href='#3_3_3'>description</a> for further details.</li>
+     <li>The ability to change the sequence of the items in the list of sources.</li>
+    </ul>
+    <h3>v2.07 was never officially released</h3>
+    <h3>v2.06 (June 2007):</h3>
+    <ul>
+     <li>Some minor problems caused when parts of the database (eg. Sources list) had not been populated have been resolved</li>
+     <li>A problem where the wrong colour was used when displaying a Tree on a Web Page for a male without a partner has been corrected.  The tree will need to be re&ndash;exported for the change to take effect.</li>
+     <li>Photos and Documents can now be retrieved from any location within the computer&rsquo;s file management system and when exported to a web site are always stored in a single folder.</li>
+     <li>Non&ndash;graphic Documents (eg html and MS Word files) can now be viewed when using the View Person function</li>
+     <li>Audio and Video files can be added to a person&rsquo;s record.</li>
+     <li>&lsquo;Same Sex&rsquo; partnerships are now supported.  Although there is little evidence in historical documentation, these relationships are increasingly recognised today.  There are some limitations on certains functions within the application and these are noted where relevant.</li>
+     <li>An additional value of &lsquo;Unspecified&rsquo; is now available for the Sex attribute of a person.  This can be used where the sex of a person is not known or an individual chooses not to be classified as Male or Female.  There are some limitations on certains functions within the application and these are noted where relevant.</li>
+     <li>An option is available to enable &lsquo;Auto&ndash;save&rsquo;.  If turned On, this option will immediately save data to the computer&rsquo;s file storage system whenever significant data is added or changed.</li>
+     <li>The size of exported web pages has been reduced by the use of Casading Style Sheets.  Although the size reduction can be impacted by various factors, such as the number of photos included on web pages, a size saving of 10% is achievable.</li>
+     <li>An option to produce a simplified GEDCOM export is available.  This is intended to allow the exported file to be used by other applications that do not support all of the complexities of the full GEDCOM standard such as date ranges, multiple occupations and addresses, source citations etc.</li>
+    </ul>
+    <h3>v2.05 (April 2007):</h3>
+    <ul>
+     <li>A problem with the display of long captions for photos and documents was fixed.</li>
+     <li>A block of text can now be entered for use as an introduction/overview on the &lsquo;Family Index&rsquo; (home) page when publishing to HTML Web pages.</li>
+     <li>Up to 3 items can now be specified for inclusion on the menu that appears on the &lsquo;Family Index&rsquo; (home) page when publishing to HTML Web pages.</li>
+     <li>The list of other events in a person&rsquo;s record can be re&ndash;sequenced to suit your requirements.</li>
+     <li>Some &lsquo;ease of use&rsquo; improvements were made to aid management of the source list for a data item.</li>
+     <li>A problem with linking non&ndash;graphic documents (eg. html) to a record was addressed.  Non&ndash;graphic images can only be viewed when the database is exported to HTML web pages.</li>
+    </ul>
+    <p>Many thanks to the users of the application for their feedback and enhancement suggestions.</p>
+  <h1><a name=2></a>2 Installation<a href='#top' class='gototop'>Contents</a></h1>
+   <p>The downloaded zip file should be unpacked using either the standard windows extract facility or available software such as WinZip.  The package contains 8 files &ndash; this help file (cvbFT Help.htm), the main application file (cvbFT v4.03.xls) and 6 small graphic (.jpg) files that are used by the application.  These should all be located in the same Windows folder.  The main application file can be renamed but changing the name of the other files (or deleting them) will prevent the application from working correctly and cause errors.</p>
+   <h2><a name=2_1></a>2.1 Macro Security<a href='#top' class='gototop'>Contents</a></h2>
+    <p>A &lsquo;self&ndash;signed Digital Certificate&rsquo; is attached to the cvbFT macros and can be installed on your PC to avoid being prompted to allow these macros to run every time the aplication is used. The process for installing depends on the version of Excel that you are running.</p>
+    <h3><a name=2_1_1></a>2.1.1 Excel 2003<a href='#top' class='gototop'>Contents</a></h3>
+     <p>Excel macro security should be set to high or medium (a lower setting is not generally recommended) or the application will not function correctly.  To check this, from the Excel &lsquo;Tools&rsquo; menu, select &lsquo;Macro&rsquo; and then &lsquo;Security...&rsquo; and check that High or Medium is selected.</p>
+     <p>To install the certificate:</p>
+     <ul>
+      <li>Open cvbFT in Microsoft Excel</li>
+      <li>When you get the Security Warning, click on the &lsquo;Details&rsquo; button.</li>
+      <li>The Digital Signature Details window should be displayed &ndash; click on the &lsquo;View Certicate&rsquo; button</li>
+      <li>The Certificate window is displayed &ndash; click on &lsquo;Install Certificate&rsquo;</li>
+      <li>Click &lsquo;Next&rsquo; on the next 2 windows and then &lsquo;Finish&rsquo;</li>
+      <li>Click &lsquo;Yes&rsquo; on the Security Warning window and then click OK when the certificate has been installed</li>
+      <li>Click &lsquo;OK&rsquo; on both the Certificate and Digital Signature Details windows to close them</li>
+      <li>Click the &lsquo;Disable Macros&rsquo; button on the Security Warning window</li>
+      <li>cvbFT should start.  Do not try to use it but shut it down using the Close option on the Excel File menu</li>
+      <li>Re&ndash;open cvbFT.  This time, the option &lsquo;Always trust macros from this publisher.&rsquo; is enabled &ndash; tick the box and then click on the &lsquo;Enable Macros&rsquo; button.</li>
+     </ul>
+     <p>cvbFT will now complete its start&ndash;up and can be used normally.  Next time it is opened, the macro security question will be skipped.</p>
+    <h3><a name=2_1_2></a>2.1.2 Excel 2007<a href='#top' class='gototop'>Contents</a></h3>
+     <p>Open Excel and change/check the macro security settings by following these steps:</p>
+     <ul>
+      <li>Click the Microsoft Office Button, and then click &lsquo;Excel Options&rsquo;</li>
+      <li>Click &lsquo;Trust Center&rsquo;, click &lsquo;Trust Center Settings&rsquo;, and then click &lsquo;Macro Settings&rsquo;</li>
+      <li>Under &lsquo;Macro Settings&rsquo;, ensure that the &lsquo;Disable all macros except digitally signed macros&rsquo; option is selected</li>
+      <li>Click &lsquo;OK&rsquo; and then &lsquo;OK&rsquo;.</li>
+     </ul>
+     <p>To install the certificate:</p>
+     <ul>
+      <li>Open cvbFT. If the Message bar does not appear with a security warning, no further action is required so you can start using cvbFT. Otherwise, continue:</li>
+      <li>Click on &lsquo;Options&rsquo; on the Message bar</li>
+      <li>Click &lsquo;Show Signature Details&rsquo; and then select &lsquo;View Certificate&rsquo;</li>
+      <li>Select &lsquo;Install Certificate&rsquo; and then click &lsquo;Next&rsquo;</li>
+      <li>Select &lsquo;Place all certificates in the following store&rsquo; and click &lsquo;Browse...&rsquo;</li>
+      <li>From the list, select &lsquo;Trusted Root Certificate Authorities&rsquo; and click &lsquo;OK&rsquo;</li>
+      <li>Click &lsquo;Next&rsquo; followed by &lsquo;Finish&rsquo;</li>
+      <li>If you get a security warning, click &lsquo;Yes&rsquo;</li>
+      <li>Click &lsquo;OK&rsquo;, &lsquo;OK&rsquo;, &lsquo;OK&rsquo;, &lsquo;OK&rsquo;</li>
+      <li>Back in cvbFT, close the program without saving</li>
+     </ul>
+     <p>Re&ndash;open cvbFT, which will now complete its start&ndash;up and can be used normally. No further security warnings should appear on the message bar.</p>
+   <h2><a name=2_2></a>2.2 First use<a href='#top' class='gototop'>Contents</a></h2>
+    <p>When a newly installed application file is first opened, the current directory is scanned for earlier versions of the application that contain family tree data.  If one is found, you are asked if you want to import the data into the new  version.  See the section on <a href='#3_6'>Upgrade</a> for further details of how this works.</p>
+   <h2><a name=2_3></a>2.3 Switching between Windows XP and Vista (and vice versa)<a href='#top' class='gototop'>Contents</a></h2>
+    <p>The default folder names used by Windows XP and Vista are different and there are various parts of the cvbFT &lsquo;database&rsquo; that need to be modified to reflect this. Typically, Windows XP uses path names such as &lsquo;C:\Documents and Settings\{username}\My Documents\...&rsquo; and &lsquo;C:\Documents and Settings\{username}\My Documents\My Pictures...&rsquo; while Vista uses &lsquo;C:\Users\{username}\Documents\...&rsquo; and &lsquo;C:\Users\{username}\Pictures\...&rsquo;. As there is no guaranteed way of predicting exactly where pictures, documents and other multimedia are actually stored, it is safer to make these changes manually. To accomplish this, please follow these instructions:</p>
+    <ul>
+     <li>Switch to the &lsquo;Excel standard&lsquo; screen view by clicking on &lsquo;Preferences&rsquo; and then ensuring &lsquo;Excel standard&rsquo; is selected before clicking on the &lsquo;OK&rsquo; button</li>
+     <li>Click on the coloured &lsquo;Photos&rsquo; tab at the bottom of the window. You will get a warning message - read it and click on the &lsquo;Continue&rsquo; button</li>
+     <li>The information that needs to be updated is in the column headed &lsquo;Path&rsquo;. Each entry needs to be changed to be the correct path name for the operating system and file structure now being used. This can be done one entry at a time or if there are multiple entries that need changing to the same value, you can use the Excel &lsquo;Search and Replace&rsquo; &ndash; press &lsquo;Ctrl&rsquo; and &lsquo;H&rsquo;, enter the current path in the &lsquo;Find what&rsquo; field and the new path in the &lsquo;Replace with&rsquo; field and then click on &lsquo;Replace All&rsquo;</li>
+     <li>Repeat the previous step if there are other paths that need to be changed</li>
+     <li>The last 2 steps need to be repeated for the &lsquo;Docts&rsquo; and &lsquo;Multimedia&rsquo; tabs &ndash; you will not receive the warning message if you continue directly with these.</li>
+    </ul>
+  <h1><a name=3></a>3 Functions<a href='#top' class='gototop'>Contents</a></h1>
+   <p>All functions are available from the menu on the main page &ndash; Click on the &lsquo;Cover&rsquo; tab if the menu is not displayed.</p>
+   <p>The menu has 5 sub&ndash;menus:</p>
+   <ul>
+    <li>View</li>
+    <li>Edit</li>
+    <li>Maintain</li>
+    <li>Import</li>
+    <li>Export</li>
+   </ul>
+   <p>and each of these has a list of relevant functions.  The required function is initiated by clicking on the appropriate button.</p>
+   <p>An additional option &ndash; &lsquo;Check for updates&rsquo; &ndash; takes you to the application&rsquo;s web site where you have access to the latest downloadable version.</p>
+   <p>[<b><i>Note:</i></b> Unless &lsquo;Auto&ndash;save&rsquo; is turned On, changes made using functions on the &lsquo;Edit&rsquo; and &lsquo;Maintain&rsquo; menus are not permanently saved to the database until the Excel file is saved to the computer&rsquo;s storage system.  This can easily be accomplished by clicking on the &lsquo;Save&rsquo; or &lsquo;Save &amp; Exit&rsquo; button.]</p>
+   <h2><a name=3_1></a>3.1 View menu<a href='#top' class='gototop'>Contents</a></h2>
+    <p>Each function on the View menu will initially ask you to identify the individual that you want to base the view on.  A drop down list is available that lists all of the individuals in the database.  They are listed by Last Name, Other Names and Date of Birth.  Select the person that you want and then click on &lsquo;OK&rsquo;.</p>
+    <p>Each function returns to this person selection screen when you exit.  Either select another individual or click on &lsquo;Cancel&rsquo; to return to the main menu.</p>
+    <h3><a name=3_1_1></a>3.1.1 Person<a href='#top' class='gototop'>Contents</a></h3>
+     <p>A window is displayed containing all of the recorded data about the person.  There are 6 tabs across the top of the page:</p>
+     <ul>
+      <li>Main Details &ndash; shows simple demographic data such as name, birth and death</li>
+      <li>Other Events &ndash; shows information about Baptism, Addresses, Occupations and Burial</li>
+      <li>Family &ndash; shows parents and partners with marriage details</li>
+      <li>Photographs &ndash; contains thumbnails of photos for this person</li>
+      <li>Documents &ndash; contains thumbnails of documents for this person</li>
+      <li>Multimedia &ndash; containing links to audio and video files for this person</li>
+     </ul>
+     <p>On the first 3 of these tabs, data about any sources recorded for a piece of information can be seen by clicking on the book icon next to the data.</p>
+     <p>In most places where a GPS coordinate is shown, a button is available to open Google Maps at the appropriate geograpic location using the default web browser.</p>
+     <p>On the Photographs, Documents and Multimedia tabs, clicking on a thumbnail will either open a window with a full size version of the image or open the file in its application.</p>
+    <h3><a name=3_1_2></a>3.1.2 Tree<a href='#top' class='gototop'>Contents</a></h3>
+     <p>A new sheet is displayed showing a family tree centred on the selected individual.</p>
+     <p>A maximum of 3 generations are shown, depending on how much data is available.  The individual&rsquo;s parents are shown in the top row with the individual and recorded partner(s) in the middle row and children at the bottom.  Individuals are coloured blue for Males, pink for Females and purple if sex is Unspecified and the linking lines show which relationship the children are from.  A double line linking the individual with a partner shows that they are recorded as having married.</p>
+     <p>Right clicking on any individual displays the <a href='#3_1_1'>View Person</a> window, while just clicking on a person displays a tree based on that individual.</p>
+     <p>Click the &lsquo;Close&rsquo; button at the top left corner when you have finished with the tree.</p>
+    <h3><a name=3_1_3></a>3.1.3 Ancestors<a href='#top' class='gototop'>Contents</a></h3>
+     <p>This function displays a new sheet containing a diagram showing up to 6 generations of ancestors of the selected person.   This diagram may be large and it may be necessary to either reduce the screen &lsquo;zoom&rsquo; setting to below 100% or scroll down and right so that the whole diagram can be viewed.</p>
+     <p>Older generations are shown to the right of the diagram &ndash; the heading row shows the relationship to the source individual and the number of individuals in the column.  Individuals are coloured blue for Males, pink for Females and purple if sex is Unspecified and the lines link an individual to their parents.  A dotted line round an individual shows that the individual also appears higher up in the diagram and probably indicates that multiple branches of the family have common ancestry.  An arrow &lsquo;>>&rsquo; in the right most column indicates that this person has at least 1 further generation of ancestors that is not shown.</p>
+     <p>Right clicking on any individual displays the <a href='#3_1_1'>View Person</a> window, while just clicking on a person displays a tree based on that individual.</p>
+     <p>Click the &lsquo;Close&rsquo; button at the top left corner when you have finished with the diagram.</p>
+    <h3><a name=3_1_4></a>3.1.4 Descendants<a href='#top' class='gototop'>Contents</a></h3>
+     <p>This function displays a new sheet containing a diagram showing up to 5 generations of descendants of the selected person.</p>
+     <p>Younger generations are shown to the right of the diagram. Individuals are coloured blue for Males, pink for Females and purple if sex is Unspecified. A line links a person to their partner(s) and lines from the partner link to the children from the relationship.  An arrow &lsquo;>>&rsquo; in the right most column indicates that this person has further descendants that are not shown.</p>
+     <p>Right clicking on any individual displays the <a href='#3_1_1'>View Person</a> window, while just clicking on a person displays a tree based on that individual.</p>
+     <p>Click the &lsquo;Close&rsquo; button at the top left corner when you have finished with the diagram.</p>
+   <h2><a name=3_2></a>3.2 Edit menu<a href='#top' class='gototop'>Contents</a></h2>
+    <p>The functions on this menu are used to record all of the data this captured about the individuals in the family tree.</p>
+    <p>If it is required to record details of the sources of recorded information then these sources should be set up (using <a href='#3_3_1'>Edit Sources List</a>) before the &lsquo;Edit&rsquo; functions are used.</p>
+    <h3><a name=3_2_1></a>3.2.1 Add Person<a href='#top' class='gototop'>Contents</a></h3>
+     <p>This function allows a new person to be added to the database.  When adding complete families, it is easier to add older generations first as the parents of younger generations can then be entered when the records for the individuals in these generations are created.</p>
+     <p>A window is displayed with 6 tabs across the top of the page:</p>
+     <ul>
+      <li>Main Details &ndash; records simple demographic data such as name, birth and death</li>
+      <li>Other Events &ndash; records information about Baptism, Addresses, Occupations and Burial</li>
+      <li>Family &ndash; records parents and partners with marriage details</li>
+      <li>Photographs &ndash; allows photos to be added to this person&rsquo;s record</li>
+      <li>Documents &ndash; allows documents to be added to this person&rsquo;s record</li>
+      <li>Multimedia &ndash; allows audio and video files to be attached to the person&rsquo;s record</li>
+     </ul>
+     <p>The number shown at the top right is the unique identifier that will be assigned to the new individual.</p>
+     <p>Data is entered on each of these tabs as detailed below and the new record is created by clicking on the &lsquo;Save&rsquo; button.  Clicking on &lsquo;Cancel&rsquo; returns the user to the main menu without saving any data.</p>
+     <h4><a name=Main_Details></a>Main Details<a href='#top' class='gototop'>Contents</a></h4>
+      <p>All details are optional apart from the person&rsquo;s Sex &ndash; select from &lsquo;Male&rsquo;, &lsquo;Female&rsquo; and &lsquo;Unspecified&rsquo;.  Once a Sex has been selected, the other tabs become available and the window background is coloured blue, pink or purple based on the selected sex.</p>
+      <p>[<b><i>Note:</i></b> Clearly it is preferable to enter more details where they are known but this allows the creation of records for individuals that are known to be partners of other family members but no further information is available.]</p>
+      <p>If entered, dates can be any valid <a href='#4_2_2'>date format</a>.  If a date of birth is not entered, it will be recorded as &lsquo;??&rsquo;.</p>
+      <p>GPS coordinates are optional but if entered must be the latitude followed by longitude and separated by a comma. Latitude is entered as degrees north of the equator with points in the southern hemisphere using a negative number so the value must be between -90 and 90. Longitude is entered as degrees east of the Greenwich meridian with points to the west using a negative number so a value from -180 to 180 is allowed. For example &lsquo;-22.968063,-43.177779&rsquo; is a point on Copacabana Beach in Rio de Janeiro, Brazil and &lsquo;52.164154,1.578533&rsquo; is the Aldeburgh Golf Club, Club House in the East of England. <br>The &lsquo;map&rsquo; icon can be used in one of two ways:</p>
+       <ul>
+        <li>If no GPS coordinate has been entered, it gives access to a &lsquo;wizard&rsquo; to assist entry of the values</li>
+        <li>If a GPS coordinate has been entered, then it initiates Google Maps, centred on the specified location in a separate browser window.</li>
+       </ul>
+      <p>All other fields are free text.  If a first name and/or family name is not entered, they will be recorded as &lsquo;??&rsquo;.</p>
+      <p>The &lsquo;book&rsquo; icon can be clicked to allow the sources of the information to be recorded.  Any number of sources can be recorded for each data item.</p>
+     <h4><a name=Other_Events></a>Other Events<a href='#top' class='gototop'>Contents</a></h4>
+      <p>Each &lsquo;event&rsquo; is specified by selecting the type from the available list and then entering an optional date and details of the event.  Once these have been entered, click the &lsquo;Save to List&rsquo; button when the details will be added to the list of events at the bottom of the page.  Only events in this list will be saved to the database.</p>
+      <p>When appropriate a GPS coordinate for the event can be entered and used as for the &lsquo;Main Details&rsquo; above.</p>
+      <p>To change details of a previously entered event, click in it in the list and change the data at the top of the screen.  Click on &lsquo;Save to List&rsquo; when you have finished making the changes, when the item in the list is updated.</p>
+      <p>The small arrows to the right of the list allow the currently selected event to be moved up or down in the list.</p>
+      <p>Selecting an existing event item and then clicking on &lsquo;Delete from List&rsquo; will remove this event item from the list to be saved to the database.</p>
+      <p>The &lsquo;source&rsquo; icon can be used to record information source(s) for each event.  Don&rsquo;t forget to click &lsquo;Save to List&rsquo; after these have been entered or changed.</p>
+     <h4><a name=Family></a>Family<a href='#top' class='gototop'>Contents</a></h4>
+      <p>Selecting either a Father or Mother from the available lists will change the value or options for the other parent as follows:</p>
+      <ul>
+       <li>if the selected parent has only one recorded partner, this person is used as the other parent</li>
+       <li>if the selected parent has multiple recorded partners, these are available to choose from for the other parent</li>
+       <li>if the selected parent has no recorded partner, then any available person of the opposite sex can be selected as the other parent [<b><i>Note:</i></b> In this case these parents will be automatically set up as partners]</li>
+      </ul>
+      <p>[<b><i>Note:</i></b> Same sex partners cannot both be assigned as parents of an individual (the father must be male and the mother female).]</p>
+      <p>[<b><i>Note:</i></b> A person whose sex is Unspecified cannot be assigned as a parent.]</p>
+      <p>Selected parents can be changed by clicking on the appropriate &lsquo;Change&rsquo; button and selecting from the available list.</p>
+      <p>Up to 4 partners can be recorded for a person, with a separate tab available for each relationship.  If the relationship is a same sex relationship, tick the box and the list of possible partners is updated accordingly.  Each partner can be selected from the list of individuals (use the &lsquo;Change&rsquo; button if an incorrect value has been entered).  If the partners were married, check the &lsquo;Married?&rsquo; box when marriage date, place and GPS coordinate can be entered.  If appropriate, divorce details can also be entered.  Details of information sources can be entered by clicking on the &lsquo;book&rsquo; icon.</p>
+      <p>[<b><i>Note:</i></b> Partners cannot be assigned to a person whose sex is Unspecified.]</p>
+     <h4><a name=Photographs></a>Photographs<a href='#top' class='gototop'>Contents</a></h4>
+      <p>Clicking the &lsquo;Add&rsquo; button shows a standard Windows file selection window.  Any number of images can be selected before clicking on the &lsquo;Open&rsquo; button.  The selected photos are then shown on the Photographs page.</p>
+      <p>Clicking on the &lsquo;Caption&rsquo; button under a photograph allows a textual description to be added.  This is available when viewing photographs using the &lsquo;View Person&rsquo; function or on the web export.</p>
+      <p>To remove a photograph from the person&rsquo;s record, check the box under the photograph(s) to be removed and then click on the &lsquo;Remove&rsquo; button.  [<b><i>Note:</i></b> this dos NOT delete the actual photograph but only removes the link to this person&rsquo;s record]</p>
+     <h4><a name=Documents></a>Documents<a href='#top' class='gototop'>Contents</a></h4>
+      <p>Clicking the &lsquo;Add&rsquo; button shows a standard Windows file selection window.  Any number of images can be selected before clicking on the &lsquo;Open&rsquo; button.  The selected documents are then shown on the Documents page.  [<b><i>Note:</i></b> html, Ms Word and MS Excel documents can be selected but cannot be displayed as a &lsquo;thumbnail&rsquo; image, so a standard placeholder icon is used for these file types.]</p>
+      <p>Clicking on the &lsquo;Caption&rsquo; button under a document allows a textual description to be added.  This is available when viewing documents using the &lsquo;View Person&rsquo; function or on the web export.</p>
+      <p>To remove a document from the person&rsquo;s record, check the box under the document(s) to be removed and then click on the &lsquo;Remove&rsquo; button.  [<b><i>Note:</i></b> this does NOT delete the actual document but only removes the link to this person&rsquo;s record]</p>
+     <h4><a name=Multimedia></a>Multimedia<a href='#top' class='gototop'>Contents</a></h4>
+      <p>Clicking the &lsquo;Add&rsquo; button shows a standard Windows file selection window.  Any number of audio and video files can be selected before clicking on the &lsquo;Open&rsquo; button.  An appropriate icon is added to the Multimedia page for each selected file.</p>
+      <p>Clicking on the &lsquo;Caption&rsquo; button under a file icon allows a textual description to be added.  This is available when viewing files using the &lsquo;View Person&rsquo; function or on the web export.</p>
+      <p>To remove a file from the person&rsquo;s record, check the box under the file(s) to be removed and then click on the &lsquo;Remove&rsquo; button.  [<b><i>Note:</i></b> this does NOT delete the actual file but only removes the link to this person&rsquo;s record]</p>
+    <h3><a name=3_2_2></a>3.2.2 Edit Person<a href='#top' class='gototop'>Contents</a></h3>
+     <p>This function allows details to be changed for a person who is already on the database.</p>
+     <p>The user is initially asked to select a person from a list of available individuals.</p>
+     <p>Data is edited using much the same features as are available in the <a href='#3_2_1'>Add Person</a> function.  Changes are saved to the database by clicking on the &lsquo;Save&rsquo; button.  Clicking on the &lsquo;Cancel&rsquo; button returns the user to the person selection option without saving any changes.</p>
+     <p>An additional &lsquo;Delete&rsquo; button is also available.  If this is clicked, the user is asked to confirm the delete request and if they decide to continue, all traces of the individual are removed from the database.  If the person was a partner in a family that also had children then a &lsquo;dummy&rsquo; partner of the same sex is created to maintain the integrity of the family but if the family has no children it is deleted.</p>
+   <h2><a name=3_3></a>3.3 Maintain menu<a href='#top' class='gototop'>Contents</a></h2>
+    <p>This menu provides a set of functions that allow the definition of personalised settings and assist with management of the database.</p>
+    <h3><a name=3_3_1></a>3.3.1 Edit Sources List<a href='#top' class='gototop'>Contents</a></h3>
+     <p>Provides a facility to catalogue the sources from which information has been obtained.  Possible values may include:</p>
+     <ul>
+      <li>A specific census</li>
+      <li>A family member</li>
+      <li>A Birth certificate</li>
+      <li>The International Genealogical Index</li>
+     </ul>
+     <p>A new source record can be created by clicking on &lsquo;&lt;new&gt;&rsquo; at the top of the list, entering a Title and Abbreviation and then clicking the &lsquo;Save&rsquo; button.  The new source will be allocated the next index reference and added to the list.</p>
+     <p>[<b><i>Note:</i></b> The rest of the application does not currently make use of the Abbreviation, but it is included for possible future use.  The GEDCOM standard already allows the optional specification of source abbreviations.]</p>
+     <p>Details of an existing source can be changed by selecting the source from the list, editing the Title and Abbreviation and then clicking the &lsquo;Save&rsquo; button.  <b>Beware:</b> Changing details of a source will automatically affect all individuals who have that source reference stored against a data item in their record.</p>
+     <p>The positin of an item in the list can be modified by using the up and down arrow buttons to the right of the list.  This facility can be used to group similar types of source and position those that are more commonly used at the top of the list.</p>
+    <h3><a name=3_3_2></a>3.3.2 Preferences<a href='#top' class='gototop'>Contents</a></h3>
+     <p>This function provides some capability to personalise aspects of the application. A window is displayed with 6 tabs across the top of the page:</p>
+     <ul>
+      <li>Application &ndash; settings that apply to the whole application</li>
+      <li>GEDCOM &ndash; Settings for <a href='#3_5_1'>GEDCOM file export</a></li>
+      <li>Living Persons &ndash; Settings used for individuals who are (or maybe) still alive</li>
+      <li>Web: Main &ndash; Options used when exporting a to a <a href='#3_5_2'>web site</a></li>
+      <li>Web: Style &ndash; Allows font and colours of <a href='#3_5_2'>exported web pages</a> to be customised</li>
+      <li>Web: Menu &ndash; Menu options used by the <a href='#3_5_2'>web site export</a></li>
+     </ul>
+     <h4><a name=3_3_2_1></a>3.3.2.1 Application<a href='#top' class='gototop'>Contents</a></h4>
+      <p>The &lsquo;Name&rsquo; assigned to the application is displayed in the title panel of the front page and used in the heading of each exported <a href='#3_5_2'>Web page</a>.</p>
+      <p>3 options are available for the &lsquo;Screen mode&rsquo;:</p>
+      <ul>
+       <li>cvbFT default &ndash; sets the application to a floating window and removes all toolvars from the display. If another open Excel workbook is selecetd the Excel default layout is reinstated.</li>
+       <li>Excel standard &ndash; uses the standards Excel settings execept for the formula bar, which is removed to avoid accidetal modification of the application.</a></li>
+       <li>Full screen &ndash; Running in Full Screen mode removes most of the Excel &lsquo;clutter&rsquo;, such as the title bar, tool bars and scroll bars that is not required by the application. Note: if you run Windows without using the auto&ndash;hide feature for the taskbar then the cvbFT sheet tabs are hidden behind the task bar and cannot be accessed.</li>
+      </ul>
+      <p>The &lsquo;Auto&ndash;save&rsquo; option is simply an alternative means of setting the feature available and works in the same manner as selecting or unselecting the option under the main menu.</p>
+      <p>The &lsquo;Backup on save&rsquo; option will create a copy of the file with the date (yyyymmdd) appended to the file name. All other activity will continue to use the main file.</p>
+     <h4><a name=3_3_2_2></a>3.3.2.2 GEDCOM<a href='#top' class='gototop'>Contents</a></h4>
+      <p>The &lsquo;File Name&rsquo; is the file that is created when the contents of the database are <a href='#3_5_1'>Exported to GEDCOM</a>.</p>
+      <p>An option is available to indicate whether or not the rules secified on the &lsquo;Living Persons&rsquo; tab should be applied to GEDCOM exports.</p>
+     <h4><a name=3_3_2_3></a>3.3.2.3 Living Persons<a href='#top' class='gototop'>Contents</a></h4>
+      <p>The &lsquo;Max. Age&rsquo; is used to calculate whether individuals should be assumed to still be living or not. Anyone under the maximum age who is not known to have died is assumed to be still potentially alive. To protect the confidentiality of living (or potentially living) relatives, it is possible to restrict the Name and Date of Birth information that is included when web pages are created.</p>
+     <h4><a name=3_3_2_4></a>3.3.2.4 Web: Main<a href='#top' class='gototop'>Contents</a></h4>
+      <p>The &lsquo;Target Folder&rsquo; is the location that will be used for the files and folders that are created when the contents of the database are exported as an <a href='#3_5_2'>HTML Web site</a>.</p>
+      <p>&lsquo;Pages to Include&rsquo; allows selection of the types of pages to include in any HTML Web site export.</p>
+      <p>The &lsquo;Description&rsquo; button opens a window that allows text to be entered that is displayed at the top of the Family Index (home) page when the tree is published as a web site.</p>
+      <p>The &lsquo;Page Heading&rsquo;, &lsquo;Meta Keywords&rsquo; and &lsquo;Meta Description&rsquo; buttons each open a window that allows text to be entered for that item. The &lsquo;Page Heading&rsquo; HTML is used at the top of every exported web page while the &lsquo;Meta Keywords&rsquo; and the &lsquo;Meta Description&rsquo; are inserted in the HTML of the Family Index (home) page.</p>
+     <h4><a name=3_3_2_5></a>3.3.2.5 Web: Style<a href='#top' class='gototop'>Contents</a></h4>
+      <p>Options are available to customise the following:</p>
+      <ul>
+       <li>Background colour &ndash; The main screen colour to be used (the background colour of this page is pale green).</li>
+       <li>Background image &ndash; An image to be used as the screen background instead of the background colour. If none is specified then the background colour will remain in use. If the &lsquo;Centre&rsquo; field is selected, the image is centred on the screen and will not scroll, otherwise it repeats as necessary to fill the page.</li>
+       <li>Font &ndash; The font to be used throughout the web site. Take care to select a font that will be available on the computers used by anyone viewing the web site.</li>
+       <li>Title text colour &ndash; The colour to be used for titles and headings throughout the web site.</li>
+       <li>Menu colour &ndash; The colour of the &lsquo;buttons&rsquo; used for the menu options on each page.</li>
+       <li>Menu text colour &ndash; The colour of the text on the menu &lsquo;buttons&rsquo; used on each page.</li>
+      </ul>
+      <p>Each item can be modified by clicking on the &lsquo;Change&rsquo; button next to the item. When a colour is to be modified, the standard Windows colour selector dialogue is used.</p>
+     <h4><a name=3_3_2_6></a>3.3.2.6 Web: Menu<a href='#top' class='gototop'>Contents</a></h4>
+      <p>The &lsquo;Custom menu items&rsquo; specify entries that will appear on the menu of the Family Index page allowing links to a main web site home page or any other location that can be specifed as a URL.</p>
+    <h3><a name=3_3_3></a>3.3.3 Event Types<a href='#top' class='gototop'>Contents</a></h3>
+     <p>The application comes with 4 types of &lsquo;event&rsquo; predefined &ndash; Baptism, Occupation, Address and Burial.  This function allows the addition of further types of event that are of particular interest to the user.</p>
+     <p>Each Event type has 5 attributes:</p>
+     <ul>
+      <li>Event Type &ndash; the text that is used with the application whenever this event type appears in an individual&rsquo;s record</li>
+      <li>Date Required? &ndash; A flag indicating whether a date has to be entered when this event type is added to an individual&rsquo;s record</li>
+      <li>Details Required? &ndash; A flag indicating whether textual details have to be entered when this event type is added to an individual&rsquo;s record</li>
+      <li>Prompt for GPS? &ndash; A flag indicating whether a prompt should be present to allow a GPS coordinate to be entered for events of this type.</li>
+      <li>GEDCOM code &ndash; A code from the GEDCOM standard that is used when this type of event is exported in a GEDCOM file. If there is no specific code for the event type, the code &lsquo;EVEN&rsquo; should be selected</li>
+     </ul>
+     <p>Event types supplied with the application cannot be edited and codes that are allocated to one or more individual records cannot have their description changed or be deleted.</p>
+    <h3><a name=3_3_4></a>3.3.4 Living Persons<a href='#top' class='gototop'>Contents</a></h3>
+     <p>When publishing family tree data to a web site it is possible to restrict the information that is made available for family members who are still alive.  This function allows you to indicate which individuals in the database are still alive.</p>
+     <p>The system uses a number of criteria to decide which individuals may still be alive, these include:</p>
+     <ul>
+      <li>Is a known Date of Death absent?</li>
+      <li>If they have a Date of Birth, are they older than the maximum age specified in <a href='#3_3_2'>Preferences</a>?</li>
+      <li>If they do not have a Date of Birth, information such as marriage date, age of partner and age of children is used to calculate a probable age and this is compare against the maximum age specified in <a href='#3_3_2'>Preferences</a></li>
+     </ul>
+     <p>All individuals meeting these criteria are displayed.  A tick is displayed beside those that do not have an unknown Date of Death recorded.  Individuals in the list can be modified to indicate that they are or are not still alive.  When &lsquo;OK&rsquo; is clicked, an unknown Date of Death is recorded for all those in the list that are not indicated to be still alive.</p>
+    <h3><a name=3_3_5></a>3.3.5 Validate<a href='#top' class='gototop'>Contents</a></h3>
+     <p>This function checks the database for potential issues that may affect its performance or where the data is not complete or consistent.  If errors or warnings are found they are listed and give details of the page on which they appear, the record that has/had the issue, issue details and action taken.</p>
+     <p>The database should always be validated immediately after <a href='#3_4_1'>Importing a GEDCOM</a> file or manually editing the database.</p>
+     <p>In some cases, the issue can be automatically resolved and no further action is necessary.  Only those issues that have &lsquo;none&rsquo; in the Action column are of potential concern.  It is possible that these can be fixed by reading the section on <a href='#4_1'>Database Contents</a> and then manually editing the relevant database entry.</p>
+     <p>If you cannot resolve issues identified by this facility, please send an email with full details of the problem and the cause (if known) to <a href="http://www.bishops-online.net/ContactForm.asp?Target=Support&amp;Subject=cvbFT v4.03 validation issue">me</a>.</p>
+     <p>[<b><i>Note:</i></b> The validate function also performs some simple tidying of the database such as sorting the children in a family into date of birth order.] </p>
+   <h2><a name=3_4></a>3.4 Import menu<a href='#top' class='gototop'>Contents</a></h2>
+    <h3><a name=3_4_1></a>3.4.1 GEDCOM<a href='#top' class='gototop'>Contents</a></h3>
+     <p>This facility allows the database to be populated with data from a GEDCOM file created by another family history application.</p>
+     <p>GEDCOM is a specification for the communication of genealogical data.  It was developed by the Family History Department of The Church of Jesus Christ of Latter&ndash;day Saints and is an acronym for <i><b>Ge</b></i>nealogical <i><b>D</b></i>ata <i><b>Com</b></i>munication.  An unofficial version of the GEDCOM standard is available at <a href='http://homepages.rootsweb.com/~pmcbride/gedcom/55gcint.htm'>http://homepages.rootsweb.com/~pmcbride/gedcom/55gcint.htm</a>.</p>
+     <p>The function first uses a standard Windows file selection window to let you select the file to be imported.  The file must have a filename extension of &lsquo;.ged&rsquo;.</p>
+     <p>A window is then displayed showing the number of individuals, families and sources that will be imported, together with a warning that <b>all existing data will be replaced</b>.  Clicking &lsquo;Continue&rsquo; starts the import.  When the import is complete, you are advised to run the <a href='#3_3_5'>Validate</a> function.</p>
+     <p>[<b><i>Note:</i></b> Even if Auto&ndash;save is turned ON, imported data is not permanently saved to the database until the Excel file is saved to the computer&rsquo;s storage system.  This can easily be accomplished by clicking on the &lsquo;Save&rsquo; or &lsquo;Save &amp; Exit&rsquo; button.]</p>
+   <h2><a name=3_5></a>3.5 Export<a href='#top' class='gototop'>Contents</a></h2>
+    <h3><a name=3_5_1></a>3.5.1 GEDCOM<a href='#top' class='gototop'>Contents</a></h3>
+     <p>This function creates a GEDCOM file from the database that can be used to load the data into another GEDCOM compliant application.</p>
+     <p>Clicking the &lsquo;Simple GEDCOM&rsquo; option will produce a file that does not include:</p>
+     <ul>
+      <li>Date ranges &ndash; these are truncated to the year at the end of the range</li>
+      <li>Multiple Occupations &ndash; these are combined into a single field with no dates</li>
+      <li>Address data</li>
+      <li>Burial data</li>
+      <li>Source citations and list of sources</li> 
+     </ul>
+     <p>Although all of these data items are supported by the GEDCOM standard, some applications and web sites do not correctly support them and if problems are experienced with the full GEDCOM export, this simple version should work.</p>
+     <p>[<b><i>Note:</i></b> Same sex relationships and individuals with a sex of Unspecified are not supported by the GEDCOM standard and these relationships and individuals will not be included in the exported file.]</p>
+     <p>[<b><i>Warning:</i></b> Some applications that claim to support GEDCOM may not be compliant with all aspects of the standard used by cvbFT and may not correctly import all of the data]</p>
+     <p>GEDCOM is a specification for the communication of genealogical data.  It was developed by the Family History Department of The Church of Jesus Christ of Latter&ndash;day Saints and is an acronym for <i><b>Ge</b></i>nealogical <i><b>D</b></i>ata <i><b>Com</b></i>munication.  An unofficial version of the GEDCOM standard is available at <a href='http://homepages.rootsweb.com/~pmcbride/gedcom/55gcint.htm'>http://homepages.rootsweb.com/~pmcbride/gedcom/55gcint.htm</a>.</p>
+    <h3><a name=3_5_2></a>3.5.2 HTML Web site<a href='#top' class='gototop'>Contents</a></h3>
+     <p>This export function creates a series of files that use html (Hypertext Mark&ndash;up Language) that can be used to easily create a web site that can show your family history data.  The actual pages created for each individual depend on the options selected in <a href='#3_3_2'>Preferences</a>.</p>
+     <p>[<b><i>Note:</i></b> Depending on the number of individuals in your database and the processing power of your PC, this export may take a number of minutes.]</p>
+     <p>Photos, Documents, Audio and Video files are copied from their original location to folders called &lsquo;Photos/images&rsquo;, &lsquo;Docts/images&rsquo; and &lsquo;Multimedia&rsquo; within the specified web export folder.  If the file already exists in this folder it is not overwritten.  This allows images for a web site to be resampled to reduce their size allowing faster download and display, so long as the oiginal name is retained.</p>
+     <p>Once the export is complete, the contents of the Web export folder (specified in <a href='#3_3_2'>Preferences</a>) and all of its sub&ndash;folders should be copied to an appropriate location on your web server.</p>
+   <h2><a name=3_6></a>3.6 Upgrade<a href='#top' class='gototop'>Contents</a></h2>
+    <p>The upgrade function is only initiated by the application and cannot be activated by the user.  The following checks are performed:</p>
+    <ul>
+     <li>Has an upgrade already been performed?</li>
+     <li>Has the user requested that the application no longer ask about upgrades?</li>
+     <li>Has a person already been added to the database?</li>
+    </ul>
+    <p>If the answer to all these is &lsquo;No&rsquo;, then the current folder is searched for an earlier version of cvbFT that contains at least one person.  If more than one is found, then that with the highest version number is used.  If an earlier version is found, the user is asked if they want to copy all of the data in to the new database.  If so, the upgrade is performed.</p>
+    <p>[<b><i>Note:</i></b> When upgrading to v2.06 (or later) from a version earlier than v2.06, additional data will be added to the Photos and Docts sheets. Image files already exported for a web site will be relocated within the specified web folder structure. Any previously exported web pages should be regenerated using the standard <a href='#3_5_2'>HTML Web site</a> export function.]</p>
+    <p>[<b><i>Note:</i></b> If you do want the upgrade facility to automatically copy your data from an earlier version of cvbFT, then the new version should be installed in the same folder as the existing database.]</p>
+    <p>[<b><i>Note:</i></b> Copied data is not permanently saved to the new database until the Excel file is saved to the computer&rsquo;s storage system (Even if Auto&ndash;save is turned On).  This can easily be accomplished by clicking on the &lsquo;Save&rsquo; or &lsquo;Save &amp; Exit&rsquo; button.]</p>
+  <h1><a name=4></a>4 Technical Details<a href='#top' class='gototop'>Contents</a></h1>
+   <h2><a name=4_1></a>4.1 Database Contents<a href='#top' class='gototop'>Contents</a></h2>
+    <p>The Excel Workbook contains 17 Worksheets.  9 of these are permanently unhidden (ie their coloured tabs are visible) and can be selected by the user.  Only the &lsquo;Cover&rsquo; sheet is protected to prevent modification as this holds no data and only acts as a menu providing access to the main functions.</p>
+    <p>Whenever the current sheet is &lsquo;Cover&rsquo; and another of the database sheets is selected, a warning message about the risks of direct editing of data is displayed.</p>
+    <p>Each of these is described in more detail below:</p>
+    <h3><a name=4_1_1></a>4.1.1 Cover<a href='#top' class='gototop'>Contents</a></h3>
+     <p>This sheet is always activated when the Workbook is opened, regardless of which sheet was active when it was last saved.</p>
+     <p>This is the only sheet that has any form of protection.  All cells are formatted as &lsquo;Locked&rsquo; and the sheet is set to be protected.  This can be turned off using the standard Excel menu facility but most of the functions will turn protection back on.</p>
+    <h3><a name=4_1_2></a>4.1.2 Individual<a href='#top' class='gototop'>Contents</a></h3>
+     <p>This sheet has 2 header rows used for column titles.  By default panes are frozen using cell D3 so that the header rows and person Reference and Name are always visible.</p>
+     <p>Data in cell A1 is hidden but it contains the number of the 1<sup>st</sup> blank row on the sheet that will be used when a new person is added to the database.</p>
+     <p>Rows from 3 onwards are used for person data with each person occupying a single row.  The number of individuals in the database is 3 less than the value of cell A1.</p>
+     <p>The data in each column is as follows:</p>
+     <p><b>A</b> (Ref) &ndash; A unique identifier for the person.  The first person added to the database is allocated 1000001 and this is incremented for each subsequent person.  Gaps may exist in the sequence where individuals have been deleted from the database.  This reference is used to identify the person on other sheets.</p>
+     <p><b>B</b> (Name:Family) &ndash; The Family name (or Surname) of the person.  Where no value is entered by the user a value of &lsquo;??&rsquo; is allocated.</p>
+     <p><b>C</b> (Name:Given) &ndash; The other names of the person.  This a concatenation of the entered first and middle names, separated by a &lsquo; &rsquo; (space).  Where no value is entered by the user a value of &lsquo;??&rsquo; is allocated.</p>
+     <p><b>D</b> (Name:Src) &ndash; Source identifier(s) for name.  </p>
+     <p><b>E</b> (Alias:Known As) &ndash; An alternative name that the person used.  Stored as entered by the user.</p>
+     <p><b>F</b> (Alias:Src) &ndash; Source identifier(s) for the alternative name.  Should be blank if there is no alternative name.</p>
+     <p><b>G</b> (Sex) &ndash; The recorded gender of the person.  Stored as &lsquo;M&rsquo; or &lsquo;F&rsquo;.  Must be valued.</p>
+     <p><b>H</b> (Birth:Date) &ndash; The person&rsquo;s date of birth.  Where no value is entered by the user a value of &lsquo;??&rsquo; is allocated.</p>
+     <p><b>I</b> (Birth:Est?) &ndash; Estimated or Approximate date indicator.  Either &lsquo;Y&rsquo; for an estimated or approximate date or otherwise blank.  Should always be blank if date of birth is &lsquo;??&rsquo;.</p>
+     <p><b>J</b> (Birth:Place) &ndash; A textual description of where the person was born.</p>
+     <p><b>K</b> (Birth:Src) &ndash; Source identifier(s) for the birth details.</p>
+     <p><b>L</b> (Death:Date) &ndash; The person&rsquo;s date of death.  Where no value is entered by the user a value of &lsquo;??&rsquo; is allocated.</p>
+     <p><b>M</b> (Death:Est?) &ndash; Estimated or Approximate date indicator.  Either &lsquo;Y&rsquo; for an estimated or approximate date or otherwise blank.  Should always be blank if date of death is &lsquo;??&rsquo;.</p>
+     <p><b>N</b> (Death:Place) &ndash; A textual description of where the person was born.</p>
+     <p><b>O</b> (Death:Src) &ndash; Source identifier(s) for the death details.</p>
+     <p><b>P</b> (Notes) &ndash; Textual notes about the person&rsquo;s record or information.  Can contain new line characters (ASCII 10) to help with presentation.</p>
+     <p><b>Q</b> (Family ID:Child in) &ndash; The family identifier of the family in which this person is a child of the partners.  This field can be used to access the family record by matching to column A on the &lsquo;Family&rsquo; sheet.</p>
+     <p><b>R</b>&ndash;<b>U</b> (Family ID:Partner1&ndash;4) &ndash; The family identifiers of the families in which this person is a partner.  This field can be used to access the family record by matching to column A on the &lsquo;Family&rsquo; sheet.  If there are less than 4 values for the person, then they should appear in the leftmost columns ie. Column T should not be valued if there is not a value in both columns R and S.</p>
+     <p><b>V</b> (GPS:Birth) &ndash; The GPS coordinate for the place of birth.</p>
+     <p><b>W</b> (GPS:Death) &ndash; The GPS coordinate for the place of death.</p>
+     <p><b>X</b> (ID Photo:Num) &ndash; The number of the photograph to be used on the Individual page on the web site
+     <p><b>Y</b> (ID Photo:File) &ndash; The full path and name of the photograph to be used on the Individual page on the web site
+     <p>To aid with access and display of person lists, functions often sort this sheet by either column A (Ref) or by Columns B (Name:Family), C (Name:) and H (Birth:Date).</p>
+    <h3><a name=4_1_3></a>4.1.3 Events<a href='#top' class='gototop'>Contents</a></h3>
+     <p>This sheet has 1 header row used for column titles.  By default panes are frozen using cell A1 so that the header row is always visible.</p>
+     <p>Data in cell H1 is hidden but it contains the number of the 1<sup>st</sup> blank row on the sheet that will be used when a new event is added to the database.</p>
+     <p>Rows from 2 onwards are used for event data with each event occupying a single row.  The number of events in the database is 2 less than the value of cell H1.</p>
+     <p>The data in each column is as follows:</p>
+     <p><b>A</b> (Ref) &ndash; A unique identifier for the event.  The first event added to the database is allocated a reference of 1 and this is incremented for each subsequent event.  Gaps may exist in the sequence where events have been deleted from the database.  This reference is not currently used on other sheets.</p>
+     <p><b>B</b> (Person) &ndash; The identifier of the person to whom this event belongs.  This field can be used to access the person record by matching to column A on the &lsquo;Individual&rsquo; sheet.</p>
+     <p><b>C</b> (Type) &ndash; The type of event.  Values that are supported are &lsquo;Baptism&rsquo;, &lsquo;Address&rsquo;, &lsquo;Occupation&rsquo; and &lsquo;Burial&rsquo; as well as any user specified value entered via the <a href='#3_3_3'>Maintain Event Types</a> function.  Must be present.</p>
+     <p><b>D</b> (Date) &ndash; The date or date range of the event.  This field may be blank if not known.</p>
+     <p><b>E</b> (Est?) &ndash; Estimated or Approximate date indicator.  Either &lsquo;Y&rsquo; for an estimated or approximate date or otherwise blank.  Should always be blank if date is blank.</p>
+     <p><b>F</b> (Details) &ndash; A textual description of the event.  Must be present.</p>
+     <p><b>G</b> (Src) &ndash; Source identifier(s) for the event.</p>
+     <p><b>H</b> (GPS) &ndash; A GPS coordinate associated with the event.</p>
+    <h3><a name=4_1_4></a>4.1.4 Photos<a href='#top' class='gototop'>Contents</a></h3>
+     <p>This sheet has 1 header row used for column titles.  By default panes are frozen using cell A1 so that the header row is always visible.</p>
+     <p>Data in cell E1 is hidden but it contains the number of the 1<sup>st</sup> blank row on the sheet that will be used when a new photo link is added to the database.</p>
+     <p>Rows from 2 onwards are used for photograph data with each photo link occupying a single row.  The number of links in the database is 2 less than the value of cell D1.</p>
+     <p>The data in each column is as follows:</p>
+     <p><b>A</b> (Ref) &ndash; The identifier of the person to whom this photograph belongs.  This field can be used to access the person record by matching to column A on the &lsquo;Individual&rsquo; sheet.</p>
+     <p><b>B</b> (File) &ndash; The file name of the linked photograph.  All file names should include the windows file extension eg. .jpg, .gif.</p>
+     <p><b>C</b> (Caption) &ndash; A textual description or details about the photograph.  Can contain new line characters (ASCII 10) to help with presentation.</p>
+     <p><b>D</b> (Path) &ndash; The full Windows path name of the folder where the photo is stored.</p>
+    <h3><a name=4_1_5></a>4.1.5 Docts<a href='#top' class='gototop'>Contents</a></h3>
+     <p>This sheet has 1 header row used for column titles.  By default panes are frozen using cell A1 so that the header row is always visible.</p>
+     <p>Data in cell E1 is hidden but it contains the number of the 1<sup>st</sup> blank row on the sheet that will be used when a new document link is added to the database.</p>
+     <p>Rows from 2 onwards are used for document data with each document link occupying a single row.  The number of links in the database is 2 less than the value of cell D1.</p>
+     <p>The data in each column is as follows:</p>
+     <p><b>A</b> (Ref) &ndash; The identifier of the person to whom this document belongs.  This field can be used to access the person record by matching to column A on the &lsquo;Individual&rsquo; sheet.</p>
+     <p><b>B</b> (File) &ndash; The file name of the linked document.  All file names should include the windows file extension eg. .jpg, .gif.</p>
+     <p><b>C</b> (Caption) &ndash; A textual description or details about the document.  Can contain new line characters (ASCII 10) to help with presentation.</p>
+     <p><b>D</b> (Path) &ndash; The full Windows path name of the folder where the document is stored.</p>
+    <h3><a name=4_1_6></a>4.1.6 Multimedia<a href='#top' class='gototop'>Contents</a></h3>
+     <p>This sheet has 1 header row used for column titles.  By default panes are frozen using cell A1 so that the header row is always visible.</p>
+     <p>Data in cell E1 is hidden but it contains the number of the 1<sup>st</sup> blank row on the sheet that will be used when a new file link is added to the database.</p>
+     <p>Rows from 2 onwards are used for file data with each file link occupying a single row.  The number of links in the database is 2 less than the value of cell D1.</p>
+     <p>The data in each column is as follows:</p>
+     <p><b>A</b> (Ref) &ndash; The identifier of the person to whom this file belongs.  This field can be used to access the person record by matching to column A on the &lsquo;Individual&rsquo; sheet.</p>
+     <p><b>B</b> (File) &ndash; The file name of the linked audio or video file.  All file names should include the windows file extension eg. .mp2, .wmv.</p>
+     <p><b>C</b> (Caption) &ndash; A textual description or details about the file.  Can contain new line characters (ASCII 10) to help with presentation.</p>
+     <p><b>D</b> (Path) &ndash; The full Windows path name of the folder where the file is stored.</p>
+    <h3><a name=4_1_7></a>4.1.7 Family<a href='#top' class='gototop'>Contents</a></h3>
+     <p>This sheet has 2 header rows used for column titles.  By default panes are frozen using cell D3 so that the header rows and family Reference and Partner IDs are always visible.</p>
+     <p>Data in cell A1 is hidden but it contains the number of the 1<sup>st</sup> blank row on the sheet that will be used when a new family is added to the database.</p>
+     <p>Rows from 3 onwards are used for family data with each family occupying a single row.  The number of families in the database is 3 less than the value of cell A1.</p>
+     <p>The data in each column is as follows:</p>
+     <p><b>A</b> (Ref) &ndash; A unique identifier for the family.  The first family added to the database is allocated F0001 and this is incremented for each subsequent family.  Gaps may exist in the sequence where families have been deleted from the database.  This reference is used to identify the family on other sheets.</p>
+     <p><b>B</b> (Partners:Male) &ndash; The person identifier of the male partner.  This field can be used to access the person record by matching to column A on the &lsquo;Individual&rsquo; sheet.  Must be present.</p>
+     <p><b>C</b> (Partners:Female) &ndash; The person identifier of the female partner.  This field can be used to access the person record by matching to column A on the &lsquo;Individual&rsquo; sheet.  Must be present.</p>
+     <p><b>D</b> (Marriage:?) &ndash; An indicator of whether the partners are known to have been married.  &lsquo;Y&rsquo; if Yes, otherwise blank.  If blank, columns E, F, G, H and I should also be blank.</p>
+     <p><b>E</b> (Marriage:Date) &ndash; The date of the marriage.  Estimated or approximate dates are indicated by preceding the date with the character &lsquo;c&rsquo; (for &lsquo;circa&rsquo;).  If column D is &lsquo;Y&rsquo;, this must be valued, with a value of &lsquo;??&rsquo; indicating unknown.</p>
+     <p><b>F</b> (Marriage:Place) &ndash; A textual description of where the marriage occurred.  Optional</p>
+     <p><b>G</b> (Marriage:Src) &ndash; Source identifier(s) for the marriage.</p>
+     <p><b>H</b> (Divorce:?) &ndash; An indicator of whether the partners are known to have been divorced.  &lsquo;Y&rsquo; if Yes, otherwise blank.  If blank, column I should also be blank.</p>
+     <p><b>I</b> (Divorce:Date) &ndash; The date of the divorce.  Estimated or approximate dates are indicated by preceding the date with the character &lsquo;c&rsquo; (for &lsquo;circa&rsquo;).  If column H is &lsquo;Y&rsquo;, this must be valued, with a value of &lsquo;??&rsquo; indicating unknown.</p>
+     <p><b>J</b>&ndash;<b>AC</b> (Children:1&ndash;20) &ndash; The person identifier of a child resulting from the relationship of the male and female partners.  This field can be used to access the person record by matching to column A on the &lsquo;Individual&rsquo; sheet.  If there are less than 20 values for the family, then they should appear in the leftmost columns ie. Column L should not be valued if there is not a value in both columns J and K.  Multiple children are sorted into date of birth order (oldest in column J) as part of the &lsquo;Validate&rsquo; function.</p>
+     <p><b>AD</b> (Marriage GPS) &ndash; The GPS coordinates of the place of marriage.</p>
+    <h3><a name=4_1_8></a>4.1.8 Notes<a href='#top' class='gototop'>Contents</a></h3>
+     <p>This sheet has 1 header row used for column titles.  By default panes are frozen using cell A1 so that the header row is always visible.</p>
+     <p>Rows from 2 onwards are used to store notes with each note occupying a single row.</p>
+     <p>The data in each column is as follows:</p>
+     <p><b>A</b> (Ref) &ndash; A unique identifier for the note.  The first note added to the database is allocated a reference of 1 and this is incremented for each subsequent note.  Gaps may exist in the sequence where notes have been deleted from the database.  This reference is not currently used on other sheets.</p>
+     <p><b>B</b> (Person) &ndash; The identifier of the person to whom this event belongs.  This field can be used to access the person record by matching to column A on the &lsquo;Individual&rsquo; sheet.</p>
+     <p><b>C</b> (Type) &ndash; A coded value for the type of note:</p>
+      <ul>
+       <li>1 - Name note</li>
+       <li>2 - Birth note</li>
+       <li>3 - Death note</li>
+       <li>4 - Event note: this value has a second part indicating the reference number of the Event to which the note belongs (e.g. 4,63 belongs to event ref. 63)</li>
+       <li>5 - Family note</li>
+       <li>6 - Partnership note: this value has a second part indicating which of the individual&rsquo;s partnerships it belongs to (e.g. 6,2 belongs to the second partnership)</li>
+      </ul>
+     <p><b>D</b> (Note) &ndash; The full text of the note as entered.</p>
+    <h3><a name=4_1_9></a>4.1.9 Sources<a href='#top' class='gototop'>Contents</a></h3>
+     <p>This sheet has 1 header row used for column titles.  By default panes are frozen using cell A1 so that the header row is always visible.</p>
+     <p>Rows from 2 onwards are used for source data with each source occupying a single row.</p>
+     <p>The data in each column is as follows:</p>
+     <p><b>A</b> (Ref) &ndash; A unique identifier for the source.  The first source added to the database is allocated S001 and this is incremented for each subsequent source.  Gaps may exist in the sequence where sources have been deleted from the database.  This reference is used to identify the source on other sheets.</p>
+     <p><b>B</b> (Description) &ndash; The full name of the source. Must be present.</p>
+     <p><b>C</b> (Abbreviation) &ndash; An abbreviated name for the source.  Not currently used by the application.  Optional.</p>
+   <h2><a name=4_2></a>4.2 Common Data Formats<a href='#top' class='gototop'>Contents</a></h2>
+    <h3><a name=4_2_1></a>4.2.1 Source Identifiers<a href='#top' class='gototop'>Contents</a></h3>
+     <p>Multiple sources are separated by &lsquo;;&rsquo; (semi&ndash;colon) and a single source always has a &lsquo;;&rsquo; appended.</p>
+    <h3><a name=4_2_2></a>4.2.2 Dates<a href='#top' class='gototop'>Contents</a></h3>
+     <p>Dates can be entered and are stored in a number of standard formats:</p>
+     <ul>
+      <li>d Mmm yyyy &ndash; a specific date</li>
+      <li>Mmm yyyy &ndash; a specific month</li>
+      <li>yyyy &ndash; a specific year</li>
+      <li>date1&ndash;date2 &ndash; a range of dates from date1 to date2.  date1 and date2 may each be any of the above formats.  In addition, where date1 and date2 are in the same year then the year may be omitted from date1 (eg. Apr&ndash;Jun 1850).</li>
+     </ul>
+   <h2><a name=4_3></a>4.3 Other Worksheets<a href='#top' class='gototop'>Contents</a></h2>
+    <p>There are 4 additional sheets that are sometimes visible and 4 which are never seen.  The 4 that are sometimes visible are:</p>
+    <ul>
+     <li>Tree &ndash; Displays the family tree diagram</li>
+     <li>Ancestors &ndash; Displays the ancestor diagram</li>
+     <li>Descendants &ndash; Displays the Descendants diagram</li>
+     <li>Errors &ndash; Displays any output from the &lsquo;Validation&rsquo; function</li>
+    </ul>
+    <p>All of these are formatted specifically for their purpose with column widths and row heights to produce readable output.</p>
+    <p>The 4 &lsquo;invisible&rsquo; sheets are:</p>
+    <ul>
+     <li>Import &ndash; Used when importing data from a GEDCOM file.  6 columns are used in pairs to provide a cross reference between imported identifiers for individuals, families and sources and the identifiers assigned by cvbFT.</li>
+     <li>Help &ndash; Holds a series of hyperlinks into this file that are used when help is invoked from within the application.</li>
+     <li>Event Types &ndash; Stores the list of Event types that are maintained by the <a href='#3_3_3'>Event Types</a> function.  The top 2 rows also hold a complete list of avilable GEDCOM event types.</li>
+     <li>Preferences &ndash; Holds the information entered in the <a href='#3_3_2'>Maintain Preferences</a> function. A few other internally maintained application parameters are also held here.</li>
+    </ul>
+   <h2><a name=4_4></a>4.4 Visual Basic for Applications<a href='#top' class='gototop'>Contents</a></h2>
+    <p>All of the VBA for this application is password protected.  I may be willing to provide access to the code on request.</p>
+   <h2><a name=4_5></a>4.5 Support<a href='#top' class='gototop'>Contents</a></h2>
+    <p>This application is supplied &lsquo;as is&rsquo; with no warranties expressed or implied.</p>
+    <p>However, I personally use cvbFT for my own family history records so if you do experience problems in using the application, please feel free to <a href="http://www.bishops-online.net/ContactForm.asp?Target=Support&amp;subject=cvbFT v4.03 application issue">contact me by email</a>. Please provide as much information as possible about the problem that you are experiencing and any background events that may have caused or be contributing to the problem.  I cannot offer any guarantees about if or when a problem may be resolved but will endeavour to address issues as quickly as time allows.</p>
+    <p>If you have any suggestions for new features and other improvements to the application, I am also happy to receive these <a href='http://www.bishops-online.net/ContactForm.asp?Target=Support&amp;subject=cvbFT v4.03 development suggestion'>by email</a>.</p>
+   <p><br><i><b>Charlie Bishop</b></i></p>
+ </body>
+</html>

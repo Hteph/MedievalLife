@@ -1,0 +1,13 @@
+============
+cvbFT v4.04d
+============
+
+The 'cvbFT_v4.04d.zip' file should be extracted to the required location. If you are using an older version of the application, it is recommended that this version is installed in the same folder.
+
+The help file - 'cvbFT Help.htm' - contains all of the details necessary to install and use the application. It can be accessed by directly opening it in a browser or clicking on any of the blue '?' (help) icons in the application. If for any reason you require technical (or other) support, links are provided in the help document (section 4.5-Support). The help file contains important information about Excel Macro security setting to ensure that cvbFT functions correctly.
+
+
+NOTE:
+This software is not guaranteed to run on versions of Excel older than Excel 2007 (see section 1.2 in the Help file for details).
+
+
