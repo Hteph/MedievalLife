@@ -26,7 +26,7 @@ public class Passions {
 	13 Valorous/Cowardly
 		 */
 		
-
+		if(Person.qAge(year)>12) { // Not until 12 years of age people take you seriously enough to give you strange nicknames
 
 		for(int i=1;i<Person.getVirtueArray().length;i++){
 
@@ -169,12 +169,10 @@ public class Passions {
 
 				}
 			}
-			
-			
-			
+						
 
 		}
 	}
 
-
+	}
 }

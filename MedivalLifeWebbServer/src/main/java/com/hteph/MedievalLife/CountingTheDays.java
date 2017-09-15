@@ -10,15 +10,14 @@ public class CountingTheDays {
 
 	public static void simulation(int yearsToSimulate, Settlement village) {
 
-		double endYear = village.getCurrentYear() + yearsToSimulate;
-		
+		double endYear = village.getCurrentYear() + yearsToSimulate;		
 		double startYear = village.getCurrentYear();
 
+		// simulation loop!
+		
 		for (double year= startYear ; year < endYear; year++) {
 
 			village.setCurrentYear(year);
-			
-
 
 			for (Home HouseH : village.getHousehold()) {
 
@@ -28,7 +27,7 @@ public class CountingTheDays {
 					
 					if (sizeOfHouse > 0) {
 						
-						HouseH.calcWorkForce(year);
+						HouseH.calcWorkForce(year); //TODO currently not used for anything
 
 						ArrayList<Actor> census = new ArrayList<Actor>();
 

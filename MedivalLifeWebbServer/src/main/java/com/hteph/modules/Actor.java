@@ -32,7 +32,7 @@ public class Actor {
 	private ArrayList<Actor> partners = new ArrayList<Actor>();
 	private ArrayList<Actor> children = new ArrayList<Actor>();
 	private ArrayList<String> kenning = new ArrayList<String>();
-//	private ArrayList<Family> familyHistory = new ArrayList<Family>(); // Tried to remove the nested family connection from this end 
+	private ArrayList<Family> familyHistory = new ArrayList<Family>(); // Tried to remove the nested family connection from this end 
 	private double[] virtueArray = new double[14];	
 	private Family currentFamily;
 	private int id;
@@ -221,8 +221,8 @@ public class Actor {
 	public void addPartner(Actor Person, double year) {
 		partners.add(Person);
 		Person.partners.add(this);
-		getCuriculum().append("In " + (int) year + " married " + Person.getHtmlName() + ". ");
-		Person.getCuriculum().append("In " + (int) year + " married " + this.getHtmlName() + ". ");
+		getCuriculum().append("<span class='marriage'>In " + (int) year + " married " + Person.getHtmlName() + ". </span>");
+		Person.getCuriculum().append("<span class='marriage'>In " + (int) year + " married " + this.getHtmlName() + ". </span>");
 	}
 
 	public void remPartner(Actor Person) {
@@ -232,15 +232,12 @@ public class Actor {
 
 	public void gettingChild(double year) {
 		
-		
-
 		boolean pregnant = false;
 		// menopause
 		if (this.qSex().equals("Female") && attrArray[0][1] > 0) {
 
 			if (qAge(year) > attrArray[18][1] + 30) {
 				attrArray[18][1]--;
-				
 				
 			}
 
@@ -332,7 +329,7 @@ public class Actor {
 					attrArray[2][1] += -0.8;
 				case "F":
 					attrArray[2][1] += -0.2; // Miscarried with some complications
-					getCuriculum().append(this.getHtmlName() + " lost a child in the year of " + (int) year + ". ");
+					getCuriculum().append("<span class='health'>"+this.getHtmlName() + " lost a child in the year of " + (int) year + ". </span>");
 					pregnant = false;
 					break;
 				default:
@@ -347,7 +344,7 @@ public class Actor {
 				case "CF":
 					attrArray[2][1] += -1; // Miscarried with complications
 					attrArray[18][1] += -2;
-					getCuriculum().append(this.getHtmlName() + " lost late a child in the year of " + (int) year + ". ");
+					getCuriculum().append("<span class='health'>"+this.getHtmlName() + " lost late a child in the year of " + (int) year + ".</span> ");
 					pregnant = false;
 					break;
 				default:
@@ -389,7 +386,7 @@ public class Actor {
 					case "CF":
 						attrArray[0][0] = 0; // Mother dies, details horrible
 						getCuriculum()
-								.append(this.getHtmlName() + " died in childbirth in the year of " + (int) year + ". ");
+								.append("<span class='health'>"+this.getHtmlName() + " died in childbirth in the year of " + (int) year + ". </span>");
 						attrArray[0][1] = 0;
 						pregnant = false;
 						break;
@@ -414,7 +411,7 @@ public class Actor {
 					case "CF":
 						attrArray[0][0] = 0; // Mother dies, details horrible
 						getCuriculum()
-								.append(this.getHtmlName() + " died in childbirth in the year of " + (int) year + ". ");
+								.append("<span class='health'>"+this.getHtmlName() + " died in childbirth in the year of " + (int) year + ". </span>");
 						attrArray[0][1] = 0;
 						break;
 					case "F":
@@ -454,7 +451,7 @@ public class Actor {
 					{
 					case "CF":
 						baby.attrArray[0][1] = 0; // baby dies suddenly
-						getCuriculum().append(baby.getHtmlName() + " died during the first year of life. ");
+						getCuriculum().append("<span class='health'>"+baby.getHtmlName() + " died during the first year of life. </span>");
 						i = 12;
 						break;
 					case "F": // here should be at test depending on living condition... when that is
@@ -481,19 +478,19 @@ public class Actor {
 
 		if (attrArray[2][1] < 1) {
 			attrArray[0][1] = 0;
-			getCuriculum().append(" In " + (int) year + " " + this.getHtmlName() + " died in bad health. ");
+			getCuriculum().append("<span class='health'> In " + (int) year + " " + this.getHtmlName() + " died in bad health. </span>");
 		} else if (attrArray[5][1] < 1) {
 			attrArray[0][1] = 0;
-			getCuriculum().append(" In " + (int) year + " " + this.getHtmlName() + " died of lost mind. ");
+			getCuriculum().append("<span class='health'> In " + (int) year + " " + this.getHtmlName() + " died of lost mind.</span> ");
 		} else if (attrArray[6][1] < 1) {
 			attrArray[0][1] = 0;
-			getCuriculum().append(" In " + (int) year + " " + this.getHtmlName() + " died posessed by spirits. ");
+			getCuriculum().append("<span class='health'> In " + (int) year + " " + this.getHtmlName() + " died posessed by spirits. </span>");
 		} else if (attrArray[8][1] < 1) {
 			attrArray[0][1] = 0;
-			getCuriculum().append(" In " + (int) year + " " + this.getHtmlName() + " died of lack of will to live. ");
+			getCuriculum().append("<span class='health'> In " + (int) year + " " + this.getHtmlName() + " died of lack of will to live. </span>");
 		} else if (attrArray[19][1] < 1) {
 			attrArray[0][1] = 0;
-			getCuriculum().append(" In " + (int) year + " " + this.getHtmlName() + " died of wasting disease. ");
+			getCuriculum().append("<span class='health'> In " + (int) year + " " + this.getHtmlName() + " died of wasting disease. </span>");
 		}
 
 		if (attrArray[0][1] == 0) {
@@ -509,15 +506,15 @@ public class Actor {
 
 				if (this.partners.size() > 0) {
 					home.setDeedOwner(this.partners.get(0));
-					this.getCuriculum().append("The partner, " + this.partners.get(0).getHtmlName()
-							+ ", inherited the deed to " + this.home.getName() + ". ");
+					this.getCuriculum().append("<span class='inheritance'>The partner, " + this.partners.get(0).getHtmlName()
+							+ ", inherited the deed to " + this.home.getName() + ".</span> ");
 					inheritanceClear = true;
 				} else if (this.children.size() > 0) {
 					for (Actor child : this.children) {
 						if (child.isAlive()) {
 							home.setDeedOwner(child);
 							this.getCuriculum().append(
-									" " + child.getHtmlName() + " inherited the deed to " + this.home.getName() + ". ");
+									"<span class='inheritance'> " + child.getHtmlName() + " inherited the deed to " + this.home.getName() + ". </span> ");
 							inheritanceClear = true;
 						}
 					}
@@ -528,13 +525,13 @@ public class Actor {
 						for (Actor inhabitant : home.getOccupants()) {
 							if (inhabitant.equals(this)) {
 								home.setDeedOwner(this.children.get(0));
-								this.getCuriculum().append(" " + inhabitant.getHtmlName() + " inherited the deed to "
-										+ this.home.getName() + ". ");
+								this.getCuriculum().append("<span class='inheritance'> " + inhabitant.getHtmlName() + " inherited the deed to "
+										+ this.home.getName() + ". </span>");
 
 							}
 						}
 					} else {
-						// just find a resident and hand the deed to that one.
+						// TODO just find a resident and hand the deed to that one.
 						// When living condition are in, if there is no resident, find the most
 						// overpopulated home and move some here
 					}
@@ -544,7 +541,7 @@ public class Actor {
 			home.remOccupant(this);
 			Village.getHome(0).addOccupant(this);
 			attrArray[0][1]=0;
-			getCuriculum().append("In year " + (int) year + " " + this.getHtmlName() + " was buried. ");
+			getCuriculum().append("<span> In year " + (int) year + " " + this.getHtmlName() + " was buried. </span>");
 
 			setDeathYear(year);
 
@@ -614,7 +611,7 @@ public class Actor {
 			}
 
 			if (eligblePartners.size() > 0) {
-				System.out.println("And in other places");
+
 				// if there are several in the list choose one at random and only one each year
 
 				Actor target;
@@ -630,7 +627,7 @@ public class Actor {
 				}
 
 				getCuriculum().append(
-						" In the year " + (int) year + " " + getHtmlName() + " was courting " + target.getHtmlName() + ". ");
+						"<span> In the year " + (int) year + " " + getHtmlName() + " was courting " + target.getHtmlName() + ". </span> ");
 				// Do they like your looks
 
 				String testApp = Dice.testD100attr(this.getApp());
@@ -716,8 +713,8 @@ public class Actor {
 
 					// should add code for the problem of finding someone!
 
-					getCuriculum().append(" In the year of " + (int)year + " " + getHtmlName()
-							+ " travelled to a far town to find a lifepartner. ");
+					getCuriculum().append("<span class='partnerQuest'> In the year of " + (int)year + " " + getHtmlName()
+							+ " travelled to a far town to find a lifepartner. </span>");
 					String partnerSex;
 					if (this.qSex().equals("Male")) {
 						partnerSex = "Female";
@@ -733,19 +730,19 @@ public class Actor {
 					home.addOccupant(Partner);
 					Family family = new Family(Partner, this, year);
 					village.getFamilies().add(family);
-//					Partner.addFamily(family);
-//					this.addFamily(family);
+					Partner.addFamily(family);
+					this.addFamily(family);
 				}
 			}
 		}
 	}
 
-//	private void addFamily(Family family) {
-//
-//		currentFamily = family;
-//		getFamilyHistory().add(family);
-//
-//	}
+	private void addFamily(Family family) {
+
+		currentFamily = family;
+		getFamilyHistory().add(family);
+
+	}
 	
 	@Override
 	public String toString() {
@@ -861,10 +858,10 @@ public class Actor {
 		this.kenning = kenning;
 	}
 
-//	public ArrayList<Family> getFamilyHistory() {
-//		return familyHistory;
-//	}
-//
+	public ArrayList<Family> getFamilyHistory() {
+		return familyHistory;
+	}
+
 //	public void setFamilyHistory(ArrayList<Family> familyHistory) {
 //		this.familyHistory = familyHistory;
 //	}
