@@ -2,6 +2,7 @@ package com.hteph.modules;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 import com.hteph.MedievalLife.ImpConstant;
 import com.hteph.utilities.Dice;
@@ -10,7 +11,7 @@ import com.hteph.utilities.NameGenerator;
 //@Entity
 public class Actor {
 	
-		static int actorsCreated;
+	private	static int actorsCreated;
 
 //	@Id
 //	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,19 +24,21 @@ public class Actor {
 	private String birthplace;
 	private Home home;
 	private String sex;
-	private double birthYear; // birthdate with day and month derived from year fractions.
+	private double birthDate; // birthdate with day and month derived from year fractions.
 	private double deathYear = -1;
 	private double[][] attrArray; // Array to store genetic potential Attribute and current attribute
-	private double weight; // weight in lbs
+	private double weight; //TODD should this be in attribute array? or otherwise being calculated from frame?[weight in lbs]
 	private int[] pubPot = new int[nrOfAttr]; // this is the random factors that add to the stats in puberty, these may	be modified by events further
 	private StringBuilder curiculum = new StringBuilder();
-	private ArrayList<Actor> partners = new ArrayList<Actor>();
-	private ArrayList<Actor> children = new ArrayList<Actor>();
+	
+	private ArrayList<Integer> partners = new ArrayList<>();
+	private ArrayList<Integer> children = new ArrayList<>();
+	
 	private ArrayList<String> kenning = new ArrayList<String>();
-	private ArrayList<Family> familyHistory = new ArrayList<Family>(); // Tried to remove the nested family connection from this end 
+	private ArrayList<Family> familyHistory = new ArrayList<Family>(); 
 	private double[] virtueArray = new double[14];	
 	private Family currentFamily;
-	private int id;
+
 
 	// for random characters unknown parents
 
@@ -71,15 +74,22 @@ public class Actor {
 	// constructor, used for babies
 
 	public Actor(String generatedName, Actor father, Actor mother, double year) {
-
+		
 		attrArray = new double[nrOfAttr][2];
+		attrArray[0][1] = 1; // Active
+		attrArray[0][0] = actorsCreated;
+		
+		actorsCreated++;
+		
+		
 		this.setFather(father);
 		this.setMother(mother);
 		birthplace = "This Village";
-		father.children.add(this);
-		mother.children.add(this);
+		father.addChildren(this);
+		mother.addChildren(this);
 
-		home = mother.home;
+
+		
 		getCuriculum().append("<span>Born in year " + (int) year + " to " + father.getHtmlName() + " and " + mother.getHtmlName());
 
 		if (Math.random() < 0.51) {
@@ -96,13 +106,16 @@ public class Actor {
 			setName(generatedName + "a");
 		}
 
-		home.addOccupant(this);
+		
+		
 		setBirthYear(year);
-		attrArray[0][1] = 1; // Active
-		attrArray[0][0] = actorsCreated;
 
-		actorsCreated++;
+		
+		
+			home = mother.home;
+		home.addOccupant(this);	
 
+		
 		// default infant attributes, will later be exchanged for a species dependency
 		double infantDefault[] = { 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 2, 1, 0 };
 		// basic virtues/sins
@@ -111,9 +124,9 @@ public class Actor {
 		}
 
 		if (qSex().equals("Male")) {
-			mother.getCuriculum().append(" " + mother.getHtmlName() + " gave birth to a son, named " + getHtmlName() + ". ");
+			mother.getCuriculum().append("<span> " + mother.getHtmlName() + " gave birth to a son, named " + getHtmlName() + ".</span> ");
 		} else {
-			mother.getCuriculum().append(mother.getHtmlName() + " gave birth to a daughter, named " + getHtmlName() + ". ");
+			mother.getCuriculum().append("<span> " +mother.getHtmlName() + " gave birth to a daughter, named " + getHtmlName() + ". </span>");
 		}
 
 		for (int i = 1; i < attrArray.length; i++) {
@@ -152,39 +165,40 @@ public class Actor {
 			getPubPot()[i] = Dice.d6();
 
 		}
-
+		
+	//	Settlement.addPopulation(this);
 	}
 
 	// constructor Used for random characters
 
 	public Actor(String generatedName, String wantedSex, double timeNow) {
 
+		attrArray = new double[nrOfAttr][2];
+		attrArray[0][1] = 1; // Active
+		attrArray[0][0] = actorsCreated;
+		actorsCreated++;
+		
 		sex = wantedSex;
 		birthplace = "Somewhere else";
-		attrArray = new double[nrOfAttr][2];
+		
 		setName(generatedName);
 
 		// generatedName
 		for (int i = 1; i < 14; i++) {
 			getVirtueArray()[i] = Dice.d6() - Dice.d6();
 		}
-
-		attrArray[0][1] = 1; // Active
-		attrArray[0][0] = actorsCreated;
-
+		
 		setBirthYear(timeNow - 15 - Dice.d6());
-
+		
 		if (sex.equals("Male")) {
 			getCuriculum().append("<span> A man");
-
+			setName(generatedName);
 		} else {
 			getCuriculum().append("<span> A woman");
 			setName(generatedName + "a");
 		}
-
+	
 		
-
-		actorsCreated++;
 
 		getCuriculum().append(" that arrived in the year of " + (int) timeNow + ".</span> ");
 
@@ -193,7 +207,9 @@ public class Actor {
 			
 			attrArray[i][1] = attrArray[i][0] + Dice.d6();
 		}
-
+		
+		System.out.println("Creating: "+this.toString());
+	//	Settlement.addPopulation(this);
 	}
 
 	// methods ---------------------------------------------------------------------------------------------------------
@@ -206,7 +222,7 @@ public class Actor {
 		return A;
 	}
 
-	public int qNumber()// Returns objects ID
+	public int getId()// Returns objects ID
 	{
 
 		int ID = (int) attrArray[0][0];
@@ -218,16 +234,24 @@ public class Actor {
 		return A;
 	}
 
-	public void addPartner(Actor Person, double year) {
-		partners.add(Person);
-		Person.partners.add(this);
+	public void marriage(Actor Person, double year) {
+		this.addPartner(Person);
+		Person.addPartner(this);
 		getCuriculum().append("<span class='marriage'>In " + (int) year + " married " + Person.getHtmlName() + ". </span>");
 		Person.getCuriculum().append("<span class='marriage'>In " + (int) year + " married " + this.getHtmlName() + ". </span>");
+		
 	}
+	
+	public void addPartner(Actor person) {
+		
+		partners.add(person.getId());
+		
+	}
+	
 
 	public void remPartner(Actor Person) {
-		partners.remove(Person);
-		Person.partners.remove(this);
+		this.partners.remove((Integer)Person.getId());
+
 	}
 
 	public void gettingChild(double year) {
@@ -248,7 +272,9 @@ public class Actor {
 			if (this.attrArray[18][1] > 0 && partners.size() > 0) {
 
 				for (int i = 0; i < partners.size(); i++) {
-					Actor partner = partners.get(i);
+					
+					Actor partner = Settlement.getSomeone(partners.get(i));
+					
 					if (partner.qSex().equals("Male")) {
 
 						int passion = 0;
@@ -384,10 +410,10 @@ public class Actor {
 				case "CF":
 					switch (Dice.testD100attr(attrArray[2][1])) {
 					case "CF":
-						attrArray[0][0] = 0; // Mother dies, details horrible
+						attrArray[0][1] = 0; // Mother dies, details horrible
 						getCuriculum()
 								.append("<span class='health'>"+this.getHtmlName() + " died in childbirth in the year of " + (int) year + ". </span>");
-						attrArray[0][1] = 0;
+
 						pregnant = false;
 						break;
 					case "F":
@@ -409,10 +435,10 @@ public class Actor {
 				case "F":
 					switch (Dice.testD100attr(attrArray[2][1])) {
 					case "CF":
-						attrArray[0][0] = 0; // Mother dies, details horrible
+						attrArray[0][1] = 0; // Mother dies, details horrible
 						getCuriculum()
 								.append("<span class='health'>"+this.getHtmlName() + " died in childbirth in the year of " + (int) year + ". </span>");
-						attrArray[0][1] = 0;
+
 						break;
 					case "F":
 						attrArray[18][1] += -4;
@@ -438,11 +464,13 @@ public class Actor {
 				NameGenerator RandName = new NameGenerator();
 
 				Actor baby = new Actor(RandName.compose(3), actualFather, this, year);
-
-				children.add(baby);
-//				baby.currentFamily = this.currentFamily;
-//				this.currentFamily.addChild(baby);
+				Settlement.addPopulation(baby);
+				addChildren(baby);
+				baby.setCurrentFamily(currentFamily);
+				this.currentFamily.addChild(baby);
+				
 				pregnant = false;
+				
 				attrArray[18][1] += -2;
 
 				// first year
@@ -502,29 +530,34 @@ public class Actor {
 			// inheritance of toft
 
 			if (home.getDeedOwner().equals(this)) {
-				boolean inheritanceClear = false;
+				boolean inheritanceDone = false;
 
 				if (this.partners.size() > 0) {
-					home.setDeedOwner(this.partners.get(0));
-					this.getCuriculum().append("<span class='inheritance'>The partner, " + this.partners.get(0).getHtmlName()
+					home.setDeedOwner(Settlement.getSomeone(partners.get(0)));
+					this.getCuriculum().append("<span class='inheritance'>The partner, " + Settlement.getSomeone(partners.get(0)).getHtmlName()
 							+ ", inherited the deed to " + this.home.getName() + ".</span> ");
-					inheritanceClear = true;
+					inheritanceDone = true;
 				} else if (this.children.size() > 0) {
-					for (Actor child : this.children) {
+					
+					ArrayList<Actor> brood = getChildren();
+					
+					for (Actor child : brood) {
 						if (child.isAlive()) {
 							home.setDeedOwner(child);
 							this.getCuriculum().append(
 									"<span class='inheritance'> " + child.getHtmlName() + " inherited the deed to " + this.home.getName() + ". </span> ");
-							inheritanceClear = true;
+							inheritanceDone = true;
 						}
 					}
 				}
 
-				if (!inheritanceClear) {
+				if (!inheritanceDone) {
 					if (this.home.getOccupants().size() > 1) {
 						for (Actor inhabitant : home.getOccupants()) {
-							if (inhabitant.equals(this)) {
-								home.setDeedOwner(this.children.get(0));
+							if (inhabitant.equals(this) && children.size()>0) {
+								
+								home.setDeedOwner(Settlement.getSomeone(children.get(0)));
+								
 								this.getCuriculum().append("<span class='inheritance'> " + inhabitant.getHtmlName() + " inherited the deed to "
 										+ this.home.getName() + ". </span>");
 
@@ -545,18 +578,22 @@ public class Actor {
 
 			setDeathYear(year);
 
+			//Now clear the dead person from all other partner lists in village
+			
 			ArrayList<Actor> partnerList = new ArrayList<Actor>();
-
-			partnerList.addAll(partners);
+			partnerList.addAll(getPartners());
 
 			for (Actor Person : partnerList) {
-				Person.partners.remove(this);
-				partners.remove(Person);
+				
+				Person.remPartner(this);				
 			}
+			
+			partners.clear();
 		}
 	}
 
 	public boolean isAlive() {
+		
 		boolean A = true;
 
 		if (this.attrArray[0][1] == 0) {
@@ -579,14 +616,16 @@ public class Actor {
 				// finding houshold and if it is populated and not the graveyard
 				int sizeOfHouse = HouseH.getOccupants().size();
 				if (sizeOfHouse > 0 && !HouseH.getName().equals("Graveyard")) {
+					
 					// getting the occupants
 					ArrayList<Actor> census = new ArrayList<Actor>();
 					census.addAll(HouseH.getOccupants());
 
 					for (Actor person : census) {
-						// old enough and not engaged in other relation, and for now not same sex, this will of course change
-						if (person.qAge(year) > 15 && person.partners.size() < 1 && person != this
-								&& !this.qSex().equals(person.qSex())) {
+						
+						// old enough and not engaged in other relation, and (for now) not of same sex, this will of course change
+						
+						if (person.qAge(year) > 15 && person.getPartners().size() < 1 && person.equals(this) && !this.qSex().equals(person.qSex())) {
 							// Not to close related...
 
 							boolean testParent = false;
@@ -670,7 +709,7 @@ public class Actor {
 
 				if (passion > 0) {
 
-					target.addPartner(this, year);
+					target.marriage(this, year);
 
 					Family family = new Family(target, this, year);
 					village.getFamilies().add(family);
@@ -725,8 +764,8 @@ public class Actor {
 					NameGenerator RandName = new NameGenerator();
 
 					Actor Partner = new Actor(RandName.compose(3), partnerSex, year);
-
-					Partner.addPartner(this, year);
+					Settlement.addPopulation(Partner);
+					Partner.marriage(this, year);
 					home.addOccupant(Partner);
 					Family family = new Family(Partner, this, year);
 					village.getFamilies().add(family);
@@ -817,7 +856,7 @@ public class Actor {
 	
 	public String getHtmlName() {
 		
-		String htmlname = "<span class='id"+this.qNumber()+"'><a href='#id"+this.qNumber()+"'>"+this.name+"</a></span>";
+		String htmlname = "<span class='id"+this.getId()+"'><a href='#id"+this.getId()+"'>"+this.name+"</a></span>";
 		
 		return htmlname;
 	}
@@ -835,11 +874,11 @@ public class Actor {
 	}
 
 	public double getBirthYear() {
-		return birthYear;
+		return birthDate;
 	}
 
 	public void setBirthYear(double birthYear) {
-		this.birthYear = birthYear;
+		this.birthDate = birthYear;
 	}
 
 	public double getDeathYear() {
@@ -891,9 +930,9 @@ public class Actor {
 		this.home = home;
 	}
 
-	public static int getActorsCreated() {
-		return actorsCreated;
-	}
+//	public static int getActorsCreated() {
+//		return actorsCreated;
+//	}
 
 
 	public String getSex() {
@@ -913,29 +952,45 @@ public class Actor {
 	}
 
 	public ArrayList<Actor> getPartners() {
-		return partners;
+		
+		ArrayList<Actor> occupantslist = new ArrayList<>();
+		
+		for(int person:partners) {
+			
+			occupantslist.add(Settlement.getSomeone(person));
+		}
+		return occupantslist;
 	}
 
-	public void setPartners(ArrayList<Actor> partners) {
-		this.partners = partners;
-	}
+//	public void setPartners(ArrayList<Actor> partners) {
+//		this.partners = partners;
+//	}
 
 	public ArrayList<Actor> getChildren() {
-		return children;
+		
+		ArrayList<Actor> childrenslist = new ArrayList<>();
+		
+		for(int person:children) {
+			
+			childrenslist.add(Settlement.getSomeone(person));
+		}
+		return childrenslist;
 	}
 
-	public void setChildren(ArrayList<Actor> children) {
-		this.children = children;
+	public void addChildren(Actor child) {
+		
+		children.add(child.getId());
 	}
 
 	public Family getCurrentFamily() {
 		return currentFamily;
 	}
 
-	public void setCurrentFamily(Family currentFamily) {
-		this.currentFamily = currentFamily;
+	public void setCurrentFamily(Family newFamily) {
+		this.currentFamily = newFamily;
 	}
-	
+
+
 	
 
 }

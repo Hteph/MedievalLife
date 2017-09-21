@@ -27,7 +27,7 @@ public class Settlement {
 	private double foundingYear;
 	private double currentYear;
 	private String founder;
-	private String chronicle;
+	private String chronicleOfPeople;
 	
 	//constructor
 	
@@ -45,12 +45,12 @@ public class Settlement {
 	
 	//methods
 	
-	public void addPopulation(int id, Actor someone) {
-		Settlement.population.put(someone.qNumber(), someone);
+	public static void addPopulation(Actor someone) {
+		Settlement.population.put(someone.getId(), someone);
 		
 	}
 	
-	public Actor getSomeone(int id) {
+	public static Actor getSomeone(int id) {
 		
 		return population.get(id);
 	}
@@ -113,11 +113,11 @@ public class Settlement {
 	}
 
 	public String getChronicle() {
-		return chronicle;
+		return chronicleOfPeople;
 	}
 
 	public void setChronicle(String chronicle) {
-		this.chronicle = chronicle;
+		this.chronicleOfPeople = chronicle;
 	}
 
 	public double getFoundingYear() {

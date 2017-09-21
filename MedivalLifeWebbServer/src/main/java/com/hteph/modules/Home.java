@@ -1,6 +1,8 @@
 package com.hteph.modules;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 //@Entity
 public class Home {
@@ -9,9 +11,9 @@ public class Home {
 	//@GeneratedValue(strategy = GenerationType.AUTO)
 	//int Id;
 
-	private ArrayList<Actor> occupants = new ArrayList<Actor>();
+	private Set<Integer> occupants = new HashSet<>();
 	private String name;
-	private Actor deedOwner;
+	private int deedOwner;
 	private double workForce;
 
 	// constructor
@@ -27,78 +29,106 @@ public class Home {
 
 	// methods
 
-	public void chOwner(Actor newOwner) {
+	public void changeOwner(Actor newOwner) {
 		setDeedOwner(newOwner);
 	}
 
 	public void addOccupant(Actor movingIn) {
-		getOccupants().add(movingIn);
+		
+		occupants.add(movingIn.getId());
+		
+		System.out.println("living in "+name+" now:"+occupants.size());
 		movingIn.setHome(this);
 
 		if (!this.getName().equals("Graveyard")) {
-			movingIn.getCuriculum().append(" Lives in " + this.getName() + ". ");
+			movingIn.getCuriculum().append("<span> Moved into " + this.getName() + ".</span> ");
 		}
 	}
 
 	public void remOccupant(Actor movingOut) {
-
-		
+	
 		movingOut.setHome(null);
-		getOccupants().remove(movingOut);
+		occupants.remove(movingOut.getId());
+		System.out.println("living in "+name+" now:"+occupants.size());
 	}
 
-	public String name() {
-		String A = getName();
-		return A;
-	}
+//	public String name() {
+//		String A = getName();
+//		return A;
+//	}
 
 	public String listOccupants() {
+		
 		StringBuilder lista = new StringBuilder();
 
+		int i=0;
 		for (Actor Person : getOccupants()) {
+			
 			lista.append(Person.getHtmlName() + " ");
-
+			i++;
 		}
 
 		String stringlista = lista.toString();
-
+		
 		return stringlista;
 	}
 
 	// calculates available workforce
 
-	public void calcWorkForce(double year) {
-		workForce = 0;
-		for (Actor Person : getOccupants()) {
-
-			double base = Math.pow((Person.getAttrArray()[1][1] + Person.getAttrArray()[2][1] * 2) / 33, 2);
-
-			double childCare = Math.min(120 - Person.qAge(year) * 20, 0);
-
-			workForce += base * 270 - childCare;
-
-		}
-	}
+//	public void calcWorkForce(double year) {
+//		
+//		workForce = 0;
+//		for (Actor Person : getOccupants()) {
+//			//TODO This needs some real attention!! Workforce should perhaps have an attribute that could change due to other obligations
+//			
+//			double base=0;
+//			
+//			try {
+//				base = Math.pow((Person.getAttrArray()[1][1] + Person.getAttrArray()[2][1] * 2) / 33, 2);
+//			} catch (Exception e) {
+//				// TODO Auto-generated catch block
+//				System.out.println(this.listOccupants());
+//				e.printStackTrace();
+//			}
+//
+//			double childCare = Math.min(120 - Person.qAge(year) * 20, 0);
+//
+//			workForce += base * 270 - childCare;
+//
+//		}
+//	}
 
 	public void useWorkForce(double Used) {
+		
 		workForce -= Used;
+		
 	}
 
 	public double getWorkForce() {
+		
 		double A = workForce;
-
 		return A;
 	}
 
 	public ArrayList<Actor> getOccupants() {
 
-		// escaping reference, but this is used in methods designed to manipulating the
-		// occupation situation ... so it is OK i think...
-		return occupants;
+		ArrayList<Actor> occupantslist = new ArrayList<>();
+		
+		for(int person:occupants) {
+			
+			System.out.println("id:" + person);
+			
+			occupantslist.add(Settlement.getSomeone(person));
+		}
+		return occupantslist;
 	}
 
 	public void setOccupants(ArrayList<Actor> occupants) {
-		this.occupants = occupants;
+		
+		for(Actor person:occupants) {
+			
+			addOccupant(person);
+		}
 	}
 
 	public String getName() {
@@ -110,11 +140,11 @@ public class Home {
 	}
 
 	public Actor getDeedOwner() {
-		return deedOwner;
+		return Settlement.getSomeone(deedOwner);
 	}
 
 	public void setDeedOwner(Actor deedOwner) {
-		this.deedOwner = deedOwner;
+		this.deedOwner = deedOwner.getId();
 	}
 
 }

@@ -9,12 +9,10 @@ public class Family {
 //	@GeneratedValue(strategy = GenerationType.AUTO)
 //	int Id;
 
-	//private Actor husb;
-	//private Actor theWife;
-	//private ArrayList<Actor> chil = new ArrayList<Actor>();
+
 	double marriageDate;
 	
-	ArrayList<Integer> children;
+	ArrayList<Integer> children = new ArrayList<>();
 	int husband;
 	int wife;
 
@@ -40,8 +38,7 @@ public class Family {
 	// methods
 	public String getGedcom(int nummer) { // the output function
 
-		String A = "0 @" + nummer + "@ FAM<br />1 HUSB @" + husband + "@ <br />2 WIFE @"
-				+ wife + "@ <br />";
+		String A = "0 @" + nummer + "@ FAM<br />1 HUSB @" + husband + "@ <br />2 WIFE @"+ wife + "@ <br />";
 
 		for (int i = 0; i < children.size(); i++) {
 			int n = 3 + i;
@@ -53,7 +50,8 @@ public class Family {
 	}
 
 	public void addChild(Actor child) {
-		children.add(child.qNumber());
+		System.out.println("Adding child:" + child.toString());
+		children.add(child.getId());
 	}
 
 	public double getMarriageDate() {
@@ -64,8 +62,16 @@ public class Family {
 		this.marriageDate = marriageDate;
 	}
 
-	public ArrayList<Integer> getChildren() {
-		return children;
+	public ArrayList<Actor> getChildren() {
+		
+		
+		ArrayList<Actor> list = new ArrayList<>();
+		
+		for(int person:children) {
+			
+			list.add(Settlement.getSomeone(person));
+		}
+		return list;
 	}
 
 	public void setChildren(ArrayList<Integer> children) {
@@ -73,19 +79,20 @@ public class Family {
 	}
 
 	public Actor getHusband() {
-		return Settlement.population.get(husband);
+		return Settlement.getSomeone(husband);
 	}
 
 	public void setHusband(Actor husband) {
-		this.husband = husband.qNumber();
+		
+		this.husband = husband.getId();
 	}
 
 	public void setWife(Actor wife) {
-		this.wife = wife.qNumber();
+		this.wife = wife.getId();
 	}
 
 	public Actor getWife() {
-		return Settlement.population.get(wife);
+		return Settlement.getSomeone(wife);
 	}
 
 }

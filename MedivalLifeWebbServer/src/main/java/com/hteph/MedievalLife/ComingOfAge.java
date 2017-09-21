@@ -22,8 +22,10 @@ public class ComingOfAge {
 	 * 
 	 */
 
-	static public void countingTheDays(Actor Person, double year) {
+	static public void theWeightOfTheYears(Actor Person, double year) {
 
+
+		
 		double age = Person.qAge(year);
 		
 		if (age < 3) {
@@ -36,7 +38,7 @@ public class ComingOfAge {
 			agingJuvenil(Person);
 		} else {
 			WeigthOfYears(Person, year);
-			System.out.println("Check: "+ Person.getName()+" in yesr "+year);
+
 		}
 
 	}
