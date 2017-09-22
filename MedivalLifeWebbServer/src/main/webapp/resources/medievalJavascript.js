@@ -18,7 +18,7 @@ function changeFont(){
 		
 	var bodyText = document.querySelector('body');
 	
-	bodyText.style.fontFamily = 'cursive';
+	bodyText.style.fontFamily = 'serif';
 	
 	$(this).hide();
 		

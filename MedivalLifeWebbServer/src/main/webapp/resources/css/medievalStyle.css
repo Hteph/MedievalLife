@@ -4,6 +4,10 @@
     font-family: arabella;
     src: url('arabella.ttf');
 }
+@font-face {
+    font-family: Braxton;
+    src: url('Braxton.otf');
+}
 
 
 body {
@@ -13,6 +17,17 @@ body {
   font-family: arabella,'Apple Chancery', 'Snell Roundhand', cursive;
   font-size: 1em;
   color:#390000;
+  
+border-style: solid;
+border-width: 159px 174px 209px 163px;
+-moz-border-image: url(BorderImage.svg) 159 174 209 163 repeat;
+-webkit-border-image: url(BorderImage.svg) 159 174 209 163 repeat;
+-o-border-image: url(BorderImage.svg) 159 174 209 163 repeat;
+border-image: url(BorderImage.svg) 159 174 209 163 repeat;
+}
+
+h1,h2,h3{
+	font-family: Braxton, serif;
 }
 
 header h3{
