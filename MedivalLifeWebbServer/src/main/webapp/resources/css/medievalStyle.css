@@ -13,17 +13,19 @@
 body {
   margin: 10px;
   padding: 0;
+  min-width: 300px;
+  max-width: 1000px;
   background-color: #fff7eb;
   font-family: arabella,'Apple Chancery', 'Snell Roundhand', cursive;
   font-size: 1em;
   color:#390000;
   
 border-style: solid;
-border-width: 159px 174px 209px 163px;
--moz-border-image: url(BorderImage.svg) 159 174 209 163 repeat;
--webkit-border-image: url(BorderImage.svg) 159 174 209 163 repeat;
--o-border-image: url(BorderImage.svg) 159 174 209 163 repeat;
-border-image: url(BorderImage.svg) 159 174 209 163 repeat;
+border-width: 160px 175px 210px 165px;
+-moz-border-image: url(BorderImage.svg) 160 175 210 165 stretch;
+-webkit-border-image: url(BorderImage.svg) 160 175 210 165 stretch;
+-o-border-image: url(BorderImage.svg) 160 175 210 165 stretch;
+border-image: url(BorderImage.svg) 160 175 210 165 stretch;
 }
 
 h1,h2,h3{
