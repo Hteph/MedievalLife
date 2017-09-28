@@ -16,7 +16,7 @@ body {
   min-width: 300px;
   max-width: 1000px;
   background-color: #fff7eb;
-  font-family: arabella,'Apple Chancery', 'Snell Roundhand', cursive;
+  font-family: Braxton, cursive;
   font-size: 1em;
   color:#390000;
   
@@ -60,15 +60,12 @@ display : inline;
 }
 
 
-article+header {
-	
+article+header {	
 	border-width: 2px;
-	border-top-style: double;
-	
+	border-top-style: double;	
 }
 
 a {
-	
 	text-decoration: none;
 	font-weight: bold;
 }

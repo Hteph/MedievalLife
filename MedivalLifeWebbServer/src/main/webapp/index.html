@@ -3,103 +3,102 @@
 <head>
 <meta charset="ISO-8859-1">
 
-	<meta http-equiv="content-type" content="text/html; charset=utf-8">
-	<title>Dr. H. Teph's Fantastic Applications</title>
-	<link rel="stylesheet" href="resources/css/homepagestyle.css" type="text/css">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Dr. H. Teph's Fantastic Applications</title>
+<link rel="stylesheet" href="resources/css/homepagestyle.css" type="text/css">
 
 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.6.1/less.min.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script
+	src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.6.1/less.min.js"></script>
 
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
 
-<div id="topbg"></div>
+	<div id="topbg"></div>
 
-<div id="main">
+	<div id="main">
 
+		<div id="header">
+			<div id="hdr-overlay"></div>
+			<div id="hdr-box1" class="box bg-pri-1"></div>
+			<div id="hdr-box2" class="box bg-pri-2"></div>
+			<div id="hdr-box3" class="box bg-pri-3"></div>
+			<div id="hdr-box4" class="box bg-pri-4"></div>
+			<h1>Dr. H. Teph's Fantastic Applications</h1>
+			<h2>A number of (RPG) hobby software applications</h2>
+		</div>
 
-	<div id="header">
-		<div id="hdr-overlay"></div>
-		<div id="hdr-box1" class="box bg-pri-1"></div>
-		<div id="hdr-box2" class="box bg-pri-2"></div>
-		<div id="hdr-box3" class="box bg-pri-3"></div>
-		<div id="hdr-box4" class="box bg-pri-4"></div>
-		<h1>Dr. H. Teph's Fantastic Applications</h1>
-		<h2>A number of (RPG) hobby software applications</h2>
-	</div>
+		<ul id="menu">
+			<li><a href="https://github.com/Hteph/StarViewer/wiki">StarViewer</a></li>
+			<li><a
+				href="https://github.com/Hteph/MedievalLifeWebbServer/wiki">Medieval
+					Life Heritage Generator</a></li>
 
-	<ul id="menu">
-		<li><a href="https://github.com/Hteph/StarViewer/wiki">StarViewer</a></li>
-		<li><a href="https://github.com/Hteph/MedievalLifeWebbServer/wiki">Medieval Life Heritage Generator</a></li>
+		</ul>
 
-	</ul>
+		<div id="content">
 
-	<div id="content">
-
-		<div id="left">
-			<h3 class="ttl">A portfoilo of applications</h3>
-			<p>
-			This is the home for my portfoilo of programs I create to learn and amuse myself. Usually they have some application to Roleplaying games (table top) or maybe for authors.
-			The links above goes to their respective wikipedia and Github repositories, where instructions for their use and uptodate status can be found.
-			</p>
-			<section>
-				<h4 class="ttl">StarViewer</h4>
-				<p>
-				An app to generate (fictional) star systems,when finished it will be delivering a cluster of stars and planet systems with complete physical characteristics and also populated with biology (where applicable) and civilisations.
-				Currently only avaiable as runnable jar file (see wiki for details).
-				</p>
-				<h4 class="ttl">Medieval Life Heritage Generator</h4>
-				<p>This is an app for generating a dynasty tree (for use as a background of an RPG character, or just to populate a small medieval hamlet) with code for the common heritage software appended at the end.</p>
-				<button onclick="window.location='http://medievallifewebbserver-medievallifewebbserver.7e14.starter-us-west-2.openshiftapps.com/generate';">Try generation</button>		
-			</section>
-			<div id="littlelinklist">
-			<img id="ico" src="l.png">
-			<h4>Duis aute irure dolor</h4>
-			<ul>
-				<li><a href="#">Lorem ipsum</a></li>
-				<li><a href="#">Dolor sit amet</a></li>
-				<li><a href="#">Consectetur adipisicing</a></li>
-			</ul>
+			<div id="left">
+				<h3 class="ttl">A portfoilo of applications</h3>
+				<p>This is the home for my portfoilo of programs I create to
+					learn and amuse myself. Usually they have some application to
+					Roleplaying games (table top) or maybe for authors. The links above
+					goes to their respective wikipedia and Github repositories, where
+					instructions for their use and uptodate status can be found.</p>
+				<section>
+					<h4 class="ttl">StarViewer</h4>
+					<p>An app to generate (fictional) star systems,when finished it
+						will be delivering a cluster of stars and planet systems with
+						complete physical characteristics and also populated with biology
+						(where applicable) and civilisations. Currently only avaiable as
+						runnable jar file (see wiki for details).</p>
+					<h4 class="ttl">Medieval Life Heritage Generator</h4>
+					<p>This is an app for generating a dynasty tree (for use as a
+						background of an RPG character, or just to populate a small
+						medieval hamlet) with code for the common heritage software
+						appended at the end.</p>
+					<button onclick="window.location='http://medievallifewebbserver-medievallifewebbserver.7e14.starter-us-west-2.openshiftapps.com/generate';">
+						Click here to Generate a heritage tree
+						</button>
+				</section>
+				
 			</div>
+
+			<div id="right">
+				<h3 class="ttl">Some project in the pipeline</h3>
+				<p>These are project that is far enough into development to
+					actually exist, but due to various reason on hiatus and not having
+					any material ready for display.</p>
+				<h4>Goblins First Dungeon</h4>
+				<p>A demo made in Unity3D for a game inspired by classical games
+					as "Dungeon Keeper" but with a slant more towards survival/crafting
+					than humorous wargaming. Development is currently on hiatus due to
+					Java intense Java learning.</p>
+
+				<h4 class="ttl">A "How to Host A Dungeon" implementation</h4>
+				<p>A test of implement the excellent "How to host a dungeon" in
+					a ASCII environment. On the wait list due to decision paralysis: Keep the
+					vertical aspect or redesign it into a fully featured multilevel
+					dungeon.</p>
+
+				<a href='https://github.com/Hteph'> <img id='iconlogga'
+					src='resources/gfx/iconlogga.png' alt='creators icon' height="128"
+					width="128"></a>
+
+			</div>
+
+			<div class="cleaner"></div>
+
+			<footer>
+				Links to Mikael's places |<a href="https://github.com/Hteph">Github</a>
+				| <a href="https://www.linkedin.com/in/mikael-hansson/">LinkedIn</a>
+				|
+			</footer>
 		</div>
-
-		<div id="right">
-			<h3 class="ttl">Some project in the pipeline</h3>
-			<p>
-			These are project that is far enough into development to actually exist, but due to various reason on hiatus and not
-			having any material ready for display.
-			</p>
-			<h4>Goblins First Dungeon</h4>
-			<p>
-			A demo made in Unity3D for a game inspired by classical games as "Dungeon Keeper" but with a slant more towards survival/crafting than humorous 
-			 wargaming. Development is currently on hiatus due to Java intense Java learning.
-			</p>
-
-			<h4 class="ttl">A "How to Host A Dungeon" implementation</h4>
-			<p>
-			A test of implement the excelletn "How to host a dungeon" in a ASCII environment. On hiatus due to decision paralysis: Keep the vertical aspect or 
-			redesign it into a fully featured multi level dungeon.
-			</p>
-			
-			<a href='https://github.com/Hteph'>
-			<img id='iconlogga' src='resources/gfx/iconlogga.png' alt='creators icon' height="128" width="128"></a>
-
-		</div>
-
-		<div class="cleaner"></div>
-
-		<footer>
-			<a href="https://github.com/Hteph">Github</a> |
-			<a href="https://www.linkedin.com/in/mikael-hansson/">LinkedIn</a> |
-
-		</footer>
-
-
 	</div>
-
-</div>
-
 </body>
 </html>
