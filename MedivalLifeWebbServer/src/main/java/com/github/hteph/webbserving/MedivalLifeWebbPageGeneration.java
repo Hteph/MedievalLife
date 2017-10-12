@@ -1,13 +1,9 @@
 package com.github.hteph.webbserving;
 
-import java.util.ArrayList;
-
 import com.hteph.MedievalLife.CountingTheDays;
 import com.hteph.modules.Actor;
 import com.hteph.modules.Home;
 import com.hteph.modules.Settlement;
-import com.hteph.utilities.Chronicler;
-import com.hteph.utilities.Gedcom;
 import com.hteph.utilities.NameGenerator;
 
 public class MedivalLifeWebbPageGeneration {

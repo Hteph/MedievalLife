@@ -39,7 +39,7 @@ public class Chronicler {
 				chronicle.append("<span class='tooltiptext'>Click for hide/reveal location</span></span>");
 				chronicle.append("<section class='household' id='"+HouseH.getName()+"'>");
 				
-				int i=0;
+				
 				for (Actor person : census) {
 					
 					System.out.println(HouseH.getName()+" varv "+1+" of "+census.size());

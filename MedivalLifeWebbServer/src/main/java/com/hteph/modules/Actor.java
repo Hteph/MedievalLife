@@ -2,8 +2,6 @@ package com.hteph.modules;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
-
 import com.hteph.MedievalLife.ImpConstant;
 import com.hteph.utilities.Dice;
 import com.hteph.utilities.NameGenerator;
